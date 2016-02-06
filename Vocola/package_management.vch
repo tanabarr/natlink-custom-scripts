@@ -1,0 +1,46 @@
+# shell command macros for package management tools
+
+##
+## RPM
+##
+
+<pkg_mgmt_subcmds> := (query="-q"|query all="-qa"|
+                       query package requirements="-qpR"| 
+           	       install="-Uvh"|erase="-e");
+
+#status|log|fetch|pull|clone|checkout|branch|config|
+#              add|add updated="add -u "|
+#              diff|diff cashed="diff --cached "|
+#              rebase="rebase -i master"|
+#              checkout master|checkout branch="checkout -b "|
+#              commit="commit -s"|commit amend="commit --amend -s"|
+#              commit modified="commit -a "|commit message="commit -m "|
+#              ref log=reflog|
+#              hard reset="reset --hard "|
+#              hard reset head="reset --hard HEAD"|
+#              stash|stash list|stash show|stash pop|
+#              submodule init|submodule update);
+
+red package = "rpm ";
+red package <pkg_mgmt_subcmds> = "rpm $1 ";
+
+##
+## Macros for pip:
+##
+pip (freeze|completion|install|list|help) = "pip $1 ";
+pip option (bash|upgrade|outdated|local|no index="no-index"|find links="find-links") = " --$1 ";
+
+##
+## Macros for yum:
+##
+yum (provides|
+	install|
+	search|
+	update|
+    remove|
+	clean|
+	clean all="clean all"|
+    local install="localinstall") = "yum $1 ";
+yum list (available|installed|extras|updates|obsoletes|all|recent) = "yum list $1 ";
+yum (enable=en|disable=dis) repo = "--$1ablerepo=*";
+

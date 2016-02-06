@@ -1,0 +1,21 @@
+##
+## Macros for git:
+##
+
+<subcmds> := (log|fetch|pull|clone|config|help|
+              checkout="checkout "|checkout move="checkout -B "|checkout new="checkout -b "|
+              branch="branch "|branch remove="branch -D "|branch show="branch{enter}"|
+              status|status tract="status -uno"|
+              add|add updated="add -u "|
+              diff|diff cashed="diff --cached "|
+              rebase="rebase -i master"|rebase continue="rebase --continue"|
+              checkout master="checkout master"|checkout branch="checkout -b "|
+              commit="commit -s"|commit amend="commit --amend -s"|
+              commit modified="commit -a "|commit message="commit -m "|
+              ref log=reflog|cherry="cherry-pick "|
+              hard reset="reset --hard "|reset head="reset HEAD"|
+              hard reset head="reset --hard HEAD"|
+              stash|stash list|stash show|stash pop|
+              submodule init|submodule update);
+versioning <subcmds> = "git "$1;
+

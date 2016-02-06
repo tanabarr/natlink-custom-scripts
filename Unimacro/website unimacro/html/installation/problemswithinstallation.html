@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Problems with installation?</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="SourceForge project for Dragon NaturallySpeaking macro facility">
+<meta name="keywords" content="Installation, NatlinkfVocolafUnimacro, Problems, installation?, Installation Natlink/Vocola/Unimacro, Problems with installation?">
+<meta name="author" content="QH software, training & advies, 2002/2012 (informatie: info at sitegen.nl)">
+<link rel="stylesheet" href="../unimacro.css" type="text/css" title="unimacro.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../unimacroie6.css" type="text/css" title="unimacroie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="../unimacroie7.css" type="text/css" title="unimacroie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" href="../unimacroie8.css" type="text/css" title="unimacroie8.css">
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="../unimacroie9.css" type="text/css" title="unimacroie9.css">
+<![endif]-->
+<script language="javascript" src="../unimacro.js" type="text/javascript"></script><link href="/unimacro/favicon.ico" rel="shortcut icon" type="image/x-icon"></head>
+<body onload="afterLoad();" onresize="onResize();"><div class="header" id="header"><!-- === start of header === -->
+
+<table border="0" cellpadding="0" cellspacing="0" class="body" width="100%">
+
+<tr><td class="banner">Unimacro</td>
+<td width="30%">&nbsp;</td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td height="15"></td></tr></table>
+
+<table border="0" cellspacing="0" class="menu" width="100%">
+<tr><td align="center" class="topon" height="28" onclick="location='installation.html';" onmouseout="status='';" onmouseover="status='Installation Natlink/Vocola/Unimacro';"><a href="installation.html">Installation Natlink/Vocola/Unimacro</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topoff" height="28" onclick="location='../features/index.html';" onmouseout="status='';" onmouseover="status='Features';"><a href="../features/index.html">Features</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topoff" height="28" onclick="location='../grammars/index.html';" onmouseout="status='';" onmouseover="status='Grammars';"><a href="../grammars/index.html">Grammars</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topoff" height="28" onclick="location='../aboutunimacro/index.html';" onmouseout="status='';" onmouseover="status='about Unimacro';"><a href="../aboutunimacro/index.html">about Unimacro</a></td></tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="navline" width="100%">
+
+<tr><td class="navline"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="navline">&nbsp;<a href="../index.html">home</a> > <a href="installation.html">installation natlink/vocola/unimacro</a> > problems with installation?</td></tr>
+</table></td></tr>
+</table>
+
+<!-- === end of header === --></div><div class="body" id="divbody"><table cellspacing="0" class="body" width="100%">
+<tr><td class="leftpart" id="leftpart" width="25%"><table cellspacing="0" class="leftpart" width="100%">
+<tr><td class="leftmenu" id="leftmenu"><!-- === left menu === -->
+<table class="leftmenu" cellspacing="0" width="100%">
+<tr><td class="leftoff"><a href="installation.html">Installation</a></td></tr>
+
+<tr><td class="leftoff"><a href="configuration.html">Configuration</a></td></tr>
+
+<tr><td class="leftoff"><a href="howtostart.html">How to start</a></td></tr>
+
+<tr><td class="leftoff"><a href="logofchanges/index.html">Log of changes</a></td></tr>
+
+<tr><td class="lefton">Problems with installation?</td></tr>
+<tr><td class="leftoff"><a href="problemswithnatlink.html">Problems with NatLink?</a></td></tr>
+
+<tr><td class="leftoff"><a href="speechmodel.html">Speech Model</a></td></tr>
+
+<tr><td class="leftoff"><a href="inifilestrategy.html">Ini file strategy</a></td></tr>
+
+<tr><td class="leftoff"><a href="configureadministratorrights.html">Configure administrator rights</a></td></tr>
+
+<tr><td class="leftoff"><a href="technicaldetails/index.html">Technical details</a></td></tr>
+</table>
+
+<!-- == end of left menu == --></td></tr>
+</table></td>
+<td class="body0" id="body0" width="76%"><table cellspacing="0" class="body" width="100%">
+<tr><td class="body" id="body" valign="top"><h1>Problems with installation?</h1>
+<h3>When starting NatSpeak after configuration three things can go wrong:</h3>
+<ul><li>NatSpeak gives message: <strong>Cannot load compatibility module support (GUID = {dd990001-bb89-1d2-b031-0060088dc929}))</strong>.</li><li>The <strong>Messages from NatLink</strong> window (before release 4.1hotel "Messages from Python Macros") comes up, but only an error message is thrown.</li><li>Nothing happens.</li></ul>
+<p>There has been quite a bit of confusion about these three problems. You can try and check the following:</p>
+<ul><li>Remove <strong>natlink.pyd</strong> in the NatLink\MacroSystem\Core directory and run the Config program</li><li>Be sure to start the Config program in elevated mode. The link in the startup menu should do so.</li><li>Be sure you have one of the supported combinations of Dragon and Python:</li>    <ul>    <li>Release 4.0 supports Dragon until 11, and Python 2.3, 2.5, 2.6 and 2.7.</li>    <li>Release 4.1 supports Dragon 12 too, and Python 2.6 and 2.7. For Dragon until 11 also Python 2.5 is still supported.</li>    <li>For Windows 8 only try Python 2.6 or 2.7</li>    <li>DO NOT USE <strong>64 bit</strong> Python versions. From release 4.1hotel onwards the config program checks this and warns you if you accidentaly installed a 64 bit python version.</li></ul></ul>
+<h3>Did you choose <strong>install for all users</strong> when asked for when installing python?</h3>
+
+<p>If not, please uninstall all python things, and reinstall python, choosing this option.</p>
+
+<h3>Did you install Natlink in C:\NatLink (or D:\NatLink, ...)?</h3>
+<p>If you installed NatLink in <strong>C:\Program files\NatLink</strong> you may get problems.</p>
+
+<p>If you did so, please Uninstall NatLink, and reinstall on <strong>C:\NatLink</strong>, or on another drive of your choice (like D:\NatLink).</p>
+
+<h3>"No valid DNS INI files Dir found"</h3>
+<p>These should automatically found by the installer program. If not, they can be specified in the info panel of the configure GUI, or with the "c" option in the configfunctions program.</p>
+
+<p>The most probable path is <strong>C:\ProgramData\Application Data\Nuance\NaturallySpeaking12</strong>. For Dragon 11 the same, with <strong>11</strong> instead of <strong>12</strong>.</p>
+
+<h3>Actions.ini</h3><ul><li>The file actions.ini cannot be found anywhere. See 
+<a href="inifilestrategy.html">the next page: Ini file strategy</a>.</li></ul>
+<h3>Changed python version</h3>
+<p>If you changed your python version, <strong>eg from 2.5 to 2.7</strong> running the Config program should note this and do the necessary changes. If not, you can try to remove all previous Python (related) installs.</p>
+
+<h3>Configuration GUI or Configuration CLI do not run</h3><ul><li>It can happen that the python shortcut has been changed. You can either:</li>    <ul>    <li>Open start_configurenatlink.py or start_natlinkconfigfunctions.py in IDLE and run from there</li>    <li>Assign <strong>python.exe</strong> to the <strong>start_configurenatlink.py</strong> file (or any <strong>.py</strong> python file) by right clicking on the file (in an explorer window), and choose Open with, Choose default program, and then choose python.exe.</li></ul></ul>
+<h1>If nothing else works</h1>
+<p>You can manually disable NatLink by changing the file <strong>nsapps.ini</strong>. See page 
+<a href="problemswithnatlink.html">problems with NatLink</a>, near the bottom.</p></td></tr>
+</table></td></tr>
+</table></div><div class="footer" id="footer"><!-- === start of footer === -->
+
+<table border="0" cellpadding="0" cellspacing="0" class="bottomline" width="100%">
+
+<tr><td class="navline"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="navline">&nbsp;<a href="../index.html">home</a> > <a href="installation.html">installation natlink/vocola/unimacro</a> > problems with installation? > 
+<a href="javascript:scrollTo(0,0);">top</a></td></tr>
+</table></td>
+<td class="sitemapbutton" onclick="location='../sitemap.html#problemswithinstallation';" onmouseout="status='';" onmouseover="status='go to the sitemap';"><a href="../sitemap.html#problemswithinstallation">sitemap</a></td>
+<td class="navline" width="5"></td>
+<td class="emailbutton" onclick="" onmouseout="status='';" onmouseover="status='send e-mail';"><noscript class="underline">q.hoogenboom</noscript>
+<script language="javascript" type="text/javascript"><!--
+m("antenna.nl", "q.hoogenboom", "information about: Problems with installation?", "e-mail");
+// --></script>
+<noscript class="underline">at&nbsp;antenna.nl</noscript></td>
+<td class="navline" width="5"></td>
+<td class="copyright">&copy;&nbsp;<strong>unimacro</strong>,&nbsp;okt 2014</td>
+<td class="copprintonly">&copy;&nbsp;<strong>unimacro</strong>,&nbsp;okt 2014<br> | a SourceForge Project by Quintijn Hoogenboom, Ben Staniford, Bart Jan van Os, Frank Olaf Sem-Jacobsen.</td></tr>
+</table>
+
+<!-- === end of footer === --></div>
+<script language="javascript" type="text/javascript"><!--
+function onResizeFunctions(){
+bodyHeight(170);
+}
+
+function onLoadFunctions(){
+onResizeFunctions();
+
+return;
+}
+
+// --></script>
+
+</body></html>

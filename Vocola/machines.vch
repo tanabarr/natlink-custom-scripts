@@ -1,0 +1,44 @@
+
+###
+### A list of machines I use frequently; written form includes my usual
+### account name for that machine.
+###
+### If you want just the account name or machine name, see accessor
+### functions below.
+###
+
+include "string.vch";
+
+User(machine) := Split($machine, "@", 0);
+Machine(machine) := Split($machine, "@", 1);
+
+ShortMachine(machine) := Split(Machine($machine), ".", 0);
+
+
+<machine> := (
+# standard RESS time-sharing machines (=standard home directory)
+release five = mdl@...
+| release six = mdl@...
+
+| P.O. Box = mdl@...
+
+# SIMPL machines, all with same home directory:
+| PA install = lillibridgem@...
+| build Debian = lillibridgem@...
+| build Debian one = lillibridgem@...
+| build Debian two = lillibridgem@...
+| build cent toss = lillibridgem@...
+| build wheezy = lillibridgem@...
+| metabox one = lillibridgem@...
+
+# RESS cluster machines (=standard home directory):
+| lark = mdl@...
+
+| Embarcadero = mdl@...
+
+
+# My (non-HP) personal machines:
+| remote foil = mdl@<censored>
+| local foil = mdl@...
+);
+

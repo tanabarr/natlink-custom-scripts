@@ -1,0 +1,8 @@
+##
+## Macros for systemctl:
+##
+
+<subcmds_sysctl> := (start|stop|enable|disable|help|
+                     status|dependencies="list-dependencies"|units="list-unit-files");
+system control <subcmds_sysctl> = "systemctl "$1;
+

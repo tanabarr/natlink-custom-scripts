@@ -1,0 +1,71 @@
+Environment variables
+
+For all definitions you can now also use the Windows system environment variables.  Enclose with _%_ and *all capitalise* them.  Its sensible use is to put them at the front of a file, folder or virtual drive definition. Slashes can be omitted.
+
+Currently relevant are:
+
+:TABLE firstcoldifferent=1, border=1:
+
+:HEADING:Variable
+:COL:Meaning
+
+:ROW:%HOME%
+
+~
+:COL:pointing to your home folder, most often your path to My documents, see below
+
+Tilde is a common shorthand notation for your home folder. 
+
+:ROW:%PROGRAMFILES%
+:COL:pointing to the program files folder
+
+:ROW:%APPDATA%
+:COL: pointing to your app data folder
+
+:ROW:%DESKTOP%
+:COL: probably NO environment variable, but added, and pointing to your desktop folder.
+
+::
+
+ HOME and ~
+The environment variable *%HOME%* is by default NOT set in Windows.  In order to make the story above work, Unimacro takes for *%HOME%*: the *My documents* folder on your system.
+
+Of course you can also set *%HOME%*d:\sites\ yourself (in System properties, Advanced, Environment variables). 
+When you are using Emacs (VoiceCode) you probably have set the *%HOME%* variable this way in order to get proper access to your *.emacs* file.
+
+For *~* also this folder is taken.
+
+
+ Examples
+ 
+
+ :TABLE firstcoldifferent=1, border=1:
+
+:HEADING colspan=2:Virtual drives
+
+:ROW:md
+:COL:%HOME%
+
+:ROW:pf
+:COL:%PROGRAMFILES%
+
+:HEADING colspan=2:Folders
+
+:ROW:md:/private or
+
+ ~private or 
+ 
+ ~/private or
+ 
+ %HOME%/private
+ 
+:COL:all pointing to the folder "private" in your documents
+
+:HEADING colspan=2:Files
+
+:ROW:~/public/examples.doc
+
+ 
+:COL:A file in the folder public of your home folder.
+::
+

@@ -1,0 +1,78 @@
+Configuration
+
+   Admin rights
+You need Administator rights for the some (of the most important) configuration actions. Therefore the program "Configure Natlink via GUI" (or via command line interface) will be started with link(/installation/configureadministratorrights.html, Administrator rights), if you use the links from the Start menu (or Apps screen in Windows 8). Please answer "Yes" if the program asks you for this.
+   
+   Export speech profiles
+-You may want to backup your speech profiles before enabling NatLink for the first time. Use the "Export" function of the "Mangage Users" dialog of NatSpeak (Dragon NaturallySpeaking). See the *warning* at the bottom of this page.
+   
+   Configure NatLink/Vocola 2/Unimacro
+
+-From the start menu, run All Programs > NatLink >  Configure NatLink via GUI 
+-For Windows 8 type in the Apps screen a few letters of the word "config" and choose "Configure NatLInk via GUI".
+-When this is the first time your run this program, several things are done silent, you can inspect the "log" panel of the GUI to see what happened/
+
+
+   NatLink
+-In the "NatLink" section, click the "Enable" button. If NatLink is not enabled, Vocola 2 and Unimacro do NOT work.
+
+   Vocola 2
+
+-Enable *Vocola 2* by the "Enable" button in the "Vocola" section and
+-Choose a directory to store your Vocola command files; we recommend *...\Documents\NatLink\Vocola*. (This is the "VocolaUserDirectory".)
+
+   Unimacro
+
+-Enable *Unimacro* by the "Enable" button in the "Unimacro" section and 
+-by choosing the UserDirectory, ie the directory where Unimacro (grammar, python) files etc. are located. Probably at *C:\NatLink\Unimacro* (if you installed at "C:\NatLink").
+-Choose a directory where your configuration files (ini files) are stored (this is the "UnimacroUserDirectory"). We recommend *...\Documents\NatLink\Unimacro*. This directory is preferably OUTSIDE the "UserDirectory" mentioned above.
+
+ Notes:
+-If you have your own grammar files, specify (as UserDirectory) the directory where your grammar files are in, or put your own grammar files in the UserDirectory.
+-If you want to use both Unimacro grammars and your own grammars, simply move your own grammar files into the Unimacro folder (still the UserDirectory)
+
+   Restart NatSpeak (Dragon NaturallySpeaking)
+
+ 
+-Each time when you finish configuring things, close the configure program and *restart NatSpeak*!
+-At least the "Messages from NatLink" window should appear when you (re)start NatSpeak, if NatLink is enabled.
+
+   Proceed with link(howtostart.html, How to Start).
+
+
+
+   Details
+
+
+ Previous versions
+
+-Starting with release 4.1beta, there is no support for Python 2.4 and before any more. 
+
+-If you want to run on older versions (pre-8) of NatSpeak, you probably have to change the DNS ini file path in the configure program. This should be the *Program* subfolder of the *DNS install path*.
+-NatLink now runs on Python 2.5, 2.6 and probably 2.7. I does not run on Python 2.4.
+
+-If you had NatLink before, there can be a warning screen, notifying you that you have to reregister NatLink. Do this, with a button at the lower left corner of the window. Restart NatSpeak (Dragon NaturallySpeaking). You possibly have to restart your computer. If problems persist, also study the additional information that the *Help buttons* in the Configure GUI program provide.
+
+ Config program not found or not working
+-In case your start menu is incorrect, you have to find the GUI or CLI program in the Windows Explorer. The configuration GUI is located in *C:\NatLink\NatLink\confignatlinkvocolaunimacro* (assuming you installed in "C:\natlink"). The GUI is the file "configurenatlink.py". Just double click on the file in the Windows Explorer.
+
+-In case the configure program (GUI) does not work, you can fall back the the command line interface (*CLI*). 
+Also see the link("/installation/technicaldetails/natlinkconfigfunctions.html", "natlinkconfigfunctions page"). The CLI is the file "natlinkconfigfunctions.py" in the folder you found in the paragraph above.
+
+
+ Vocola 2
+
+-If you want to use different languages, you need your Vocola 2 commands in different directories. See link(http://vocola.net/v2/NonEnglish.asp, Vocola 2 Non-English Languages).
+
+-Vocola 2 now automatically supports Unimacro action strings. See the section link(/features/unimacroandvocola/index.html, Unimacro and Vocola 2).
+
+ Unimacro
+
+-Note: only a selection of the grammars is in the NatLink user directory after installation. In this directory you will find a subdirectory *DisabledGrammars* with more grammar files. Notably the grammar *_keystrokes* has been put in this directory, because it can hit too often when you do not expect it. If you want grammars from this directory, simply copy them into the directory above, toggle the microphone and it should be on.
+
+ Warning for NatSpeak until version 10
+NatLink can (could) affect the speech recognition accuracy. See link(http://qh.antenna.nl/en/speechrecognition/probleemopgelost/index.html, instructions on how to prevent this). 
+
+
+If you have problems with NatLink, and you want to get rid of it, see the link(/installation/problemswithnatlink.html, instructions for reverting back to NatSpeak without NatLink) (near the bottom of this page).
+

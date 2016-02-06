@@ -1,0 +1,26 @@
+h1 {font-size: small}
+h2 {font-size: x-small}
+h3 {font-size: xx-small}
+h4 {font-size: xx-small}
+h5 {font-size: xx-small}
+li {font-size: xx-small}
+p {font-size: xx-small}
+p.pre {font-size: xx-small}
+td {font-size: xx-small}
+td.banner {font-size: large}
+td.contactbutton {font-size: xx-small}
+td.emailbutton {font-size: xx-small}
+td.printbutton {font-size: xx-small}
+td.sitemapbutton {font-size: xx-small}
+td.contactbutton a:active {font-size: xx-small}
+td.contactbutton a:link {font-size: xx-small}
+td.contactbutton a:visited {font-size: xx-small}
+td.emailbutton a:active {font-size: xx-small}
+td.emailbutton a:link {font-size: xx-small}
+td.emailbutton a:visited {font-size: xx-small}
+td.printbutton a:active {font-size: xx-small}
+td.printbutton a:link {font-size: xx-small}
+td.printbutton a:visited {font-size: xx-small}
+td.sitemapbutton a:active {font-size: xx-small}
+td.sitemapbutton a:link {font-size: xx-small}
+td.sitemapbutton a:visited {font-size: xx-small}

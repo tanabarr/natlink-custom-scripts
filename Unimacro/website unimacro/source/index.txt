@@ -1,0 +1,81 @@
+The Unimacro project
+
+
+:TABLE firstcoldifferent=1, border=1:
+:ROW:
+bold(NatLink, including Vocola, Unimacro and probably Dragonfly, now works with Dragon 12 and (July 2014) also Dragon 13 (Beta).<br>
+With Dragon 12 there are performance problems with the new
+ link(/installation/speechmodel.html, BestMatch&nbsp;V Speech Model) however.)
+
+:ROW:
+bold("Vocola has a new release, the compiler now works completely in Python.")
+
+:ROW:
+bold(Voicecode can work but is not tested yet.)
+
+:ROW:
+bold(Please consider making a link(/aboutunimacro/donation/index.html, donation to Rüdiger Wilke, Mark Lillibridge and Quintijn Hoogenboom), who are closely cooperating in the efforts to keep NatLink/Vocola/Unimacro working also with Dragon 12.)
+::
+
+
+
+:TABLE firstcoldifferent=1, border=1:
+:ROW:
+Unimacro provides extended and advanced command grammars for Dragon NaturallySpeaking (*NatSpeak* or *Dragon*).
+
+Unimacro connects to the [NatLink]/[NatPython] project, which again connects to [Dragon NaturallySpeaking].
+
+So Unimacro is an extension of an extension of the speech recognition program Dragon NaturallySpeaking.
+
+Unimacro is free, like NatLink/NatPython, and can be downloaded from SourceForge.
+
+Unimacro also aims at unifying the different open source developments that use Natlink as basis. Therefore on this website
+the combined link(/installation/installation.html, installer for NatLink/Unimacro/
+Vocola 2) is also presented.
+::
+
+ Positioning of Unimacro
+ 
+-link(http://www.nuance.com, *Dragon NaturallySpeaking*) is a general speech recognition program, sold by Nuance.
+-*NatLink/NatPython* is an open source project written by Joel Gould.  His general link(http://www.synapseadaptive.com/joel/pythonamacroasystem.htm, *introduction and explanation*) is several years old, but still very instructive.
+Read for example the general presentation about
+link(www.synapseadaptive.com/joel/NatLinkTalk.ppt, *NatLink (basics)*). For a more thorough discussion, read the *link(implementation_and_acceptance_of_natlink.pdf)* written by Joel Gould probably in 2001.
+-Meant as a unifying set of *grammars* the *Unimacro* project was started.  The grammars that are presented on this website all run inside NatLink/NatPython.  In other words: they are in the NatLink system.
+
+-link(http://vocola.net/default.asp, *Vocola 2*) is another development running in the NatLink system. See pages on  link(/features/unimacroandvocola/index.html, *Vocola 2 and Unimacro*), which to use when. Vocola 2 can now use Unimacro features. (Note for Windows Speech Recognition use can try Vocola 3.)
+:xx:
+-link(https://sourceforge.net/projects/voicecode, *VoiceCode*) is the third big application based on NatLink.
+:en:
+-link(https://sourceforge.net/projects/voicecode/, *VoiceCode*) is the third big application based on NatLink.
+Read the link(www.synapseadaptive.com/joel/VoiceCoders.ppt, *VoiceCode (initial advice)*) presentation of Joel Gould, which he gave before the voicecode project started.
+
+-As another application based on NatLink, link(http://code.google.com/p/dragonfly/, *Dragonfly*) has been developed in a more modern way. It is very powerful, and integration with Unimacro and Vocola 2 will be investigated. Dragonfly also works with Windows Speech Recognition!
+
+
+ What is on this site?
+
+-The link(/installation/installation.html, *installation/configuration section*)
+will guide you through the installation details of NatLink/Vocola 2 and Unimacro.
+-The link(features/index.html, *features section*) explains the powerful things that are implemented with Unimacro. 
+-A comparison between link(features/unimacroandvocola/index.html, *Unimacro and Vocola*), they coexist and cooperate on many aspects.
+-The link(/grammars/index.html, *grammars section*) is by far the most important for practical use.  Most of the grammars are designed to be global, so first look into the global grammars examples. 
+-More technical details of the different link(features/grammarclasses/index.html, *Unimacro grammar classes*) and link(installation/technicaldetails/index.html, *NatLink in general*).
+-Finally-link(aboutunimacro, *About Unimacro*) gives information on the authors of this project and the copyright notice.
+
+
+ Demo movies
+ 
+Some  demonstration movies have been made, to show features of Unimacro.
+
+-Recent, January 2014, about the link("http://www.youtube.com/watch?v=iViDXfyYPLo&feature=share&list=PLgaYd2iGMDFkqaw-BBwhUWhZGU-ZOOdlM", *installation and configuration of NatLink, Unimacro and Vocola*)
+
+-From some time ago:
+--link(grammars/globalgrammars/folders/index.html, grammar folders, opening folders, files and drives)
+--link(grammars/globalgrammars/tasks/index.html, several demo movies on task switching, both Dutch and English)
+--link(grammars/games/patience.html, Dutch: playing solitaire)
+--link(features/cooperationwithvoicecoder/index.html, interaction Unimacro with voicecoder)
+
+A stable release: *natlink4.0*, for *Dragon up to version 11*, see link(/installation/installation.html, *installation pages*) for details. October, 2011
+
+A beta release: *natlink4.1mike*, for *Dragon 13 Beta*, *Dragon 12* (and also probably best for earlier versions of Dragon) (October 24, 2014)
+see link(/installation/installation.html, *installation pages*)

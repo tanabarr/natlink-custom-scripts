@@ -1,0 +1,27 @@
+# keyboard mappings for "screen" unix tool
+# screen.vch
+
+screen new = {Ctrl+a}"c";
+screen remove = {Ctrl+a}"X";
+screen crop = {Ctrl+a}"Q";
+scroll back = {Ctrl+a}"["{pgup}{pgup};
+scroll mode = {Ctrl+a}"[";
+screen paste = {Ctrl+a}"]";
+screen mark = '>';
+screen kill = {Ctrl+a}"k";
+screen help = {Ctrl+a}"?";
+screen split = {Ctrl+a}"S"{ctrl+a}{tab}{ctrl+a}"n";
+screen title = {Ctrl+a}"A";
+screen list = {Ctrl+a}'"';
+screen switch = {Ctrl+a}{tab};
+screen detach = {Ctrl+a}"d";
+screen next = {Ctrl + a} {n};
+screen back = {Ctrl + a} {p};
+screen 0..9 = {Ctrl + a} {$1};
+#screen detach = {Ctrl + T} {d};
+screen attach = "screen  {Enter}  {enter}";
+screen join = "screen -x {enter}";
+screen search (backward=? | forward=/)= {ctrl+a}"[$1";
+screen search next (backward=? | forward=/)= "$1"{enter};
+
+

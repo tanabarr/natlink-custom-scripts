@@ -1,0 +1,29 @@
+
+##
+## Macros for debugger:
+##
+(arguments=a|
+ quit|
+ list source=list|
+ where|
+ next|
+ step|
+ return|
+ continue|
+ up stack=up|
+ until=until|
+ step over=n|
+ over=n
+) = $1{enter};
+
+(breakpoint=b|clear) [1..9] = $1 When($2, " $2") {enter};
+execute expression = "!";
+import debug = "import ipdb;ipdb.set_trace()";
+print = "pp ";
+(locals|globals)= "pp $1()"{enter};
+
+# equivalent macros for pycharm
+(continue|step out=return|Step over=next|step|step into=step) [1..20] [times] = When($2, Repeat($2, Wait(200) $1 {enter}), $1 {enter});
+#(Resume={f9}|stop={ctrl+f2}|restart={shift+f9}) debug = $1;
+#(run to cursor={alt+f9}|evaluate={alt+f8}|show execution={alt+f10}) = $1;
+#Toggle breakpoint = {Ctrl+F8};

@@ -1,0 +1,161 @@
+Switching to folders, opening files, websites
+
+:xx:
+-link(http://youtu.be/Ucbb09ZfG9k,"view the *demo movie*  (4.5 minutes)")
+:en:
+
+With the grammar *folders* (module file *_folders.py*) you switch to one of your predefined drives, folders or files or to one of your favourite websites.
+
+You can also call subfolders or files of:
+-Specified directories; see bottom of link(details.html, details), and:
+-If a *This computer window* or a *Open* or *Save as* dialog is active, the folders and files of the current directory are available.
+
+The behaviour is different for different groups of windows:
+-If you are in a dialog window (Open, Save As) you switch to the wanted folder inside this window.
+-If you are outside a dialog window, the desired folder is opened into a "This Computer" (or explorer) window (See link("details.html", "more details") for this folders switching strategy).
+-With the additional command word *paste* you can print the path of the folder or file to your active application
+-With the additional command word *new* you can open a new "This Computer" window.
+
+You can show the grammar with the command *show folders*. With *edit folders* you can change your *folders* list, *files* list or other parameters of the grammar.
+
+
+:TABLE firstcoldifferent=1, border=1:
+:HEADING:command
+:COL:comment
+
+:ROW:folder {folderlist}
+:COL:Go to one of the folders in the folderlist
+
+:ROW:website {websitelist}
+:COL:Go to one of the websites in the list (it is opened in your default browser)
+
+:ROW:file {filelist}
+:COL:Go to one of the files in the filelist
+
+:ROW:drive {letter}
+:COL:Go to one of the drives mentioned in the "letters" list
+
+
+:ROW:folder up  &#091;1-10&#93;
+:COL:Move up one or more folders up in the hierarchy. Different behaviour for dialog windows, this computer/explorer, Internet Explorer and Firefox
+
+
+:ROW:folder{folderlist} {folderoptions}+
+:COL:Do one or more additional actions with the folder
+
+
+:ROW:file {filelist} {fileoptions}+
+:COL:Do one or more additional actions on the file
+
+:ROW:drive {letter} {folderoptions}+
+:COL:Do one or more additional actions (see below)
+
+
+
+:ROW:(show | edit) folders
+:COL:show or edit the data for this grammar
+
+:ROW:on {letters}
+:COL:special trick for multiple drives, having the same structure. (link("details.html", "see details")
+
+::
+
+:TABLE firstcoldifferent=1, border=1:
+:HEADING:folder options
+:COL:explanation
+
+:ROW:new
+:COL:open always in the new "my computer" window
+
+:ROW:explorer
+:COL:find or open in a Windows Explorer window (or 2xExplorer if defined) (not working at the moment)
+
+:ROW:paste
+:COL:paste the folder name at the place of the cursor
+
+:ROW:maximise
+:COL:maximise the window after opening or activating
+
+:ROW:restore
+:COL:restore the window after opening or activating
+
+:TABLE firstcoldifferent=1, border=1:
+:HEADING:file options
+:COL:explanation
+
+:ROW:paste
+:COL:paste the file name at the place of the cursor
+
+:ROW:maximise, restore
+:COL:maximise, restore the window after opening or activating
+
+:ROW:edit | print | open
+:COL:open the file in *open*, *print*, *edit* mode. (*open* is the default, except for .py files, they have *edit* as default)
+
+:ROW:on {letters}
+:COL:special trick for multiple drives, having the same structure. (link("details.html", "see details"))
+::
+
+
+
+
+ Using environment variables
+In the definition of folders, files and virtual drives you can now use environment variables like *%HOME%*,  *%PROGRAMFILES%* or *%APPDATA%*. It is also possible to use *~* instead of *%HOME%*.
+
+See 
+link("environmentvariables.html", "the page about using these environment variables").
+
+
+ When editing your folders you will see the following inifile sections:
+
+:TABLE firstcoldifferent=1, border=1:
+:HEADING:section
+:COL:comment
+
+:ROW:files
+:COL:Here you can define your _filelist_.  Delete all the unwanted entries, and enter a word (spoken form) on the left, and the filename on the right.  You can make use of *virtualdrives* (below) and of entries from the folders list. 
+
+*/* is translated into *\*.
+
+:ROW:folders
+:COL:Here you can define your _folderlist_.  Delete all the unwanted entries, and enter a word (spoken form) on the left, and the folder name on the right.  You can make use of *virtualdrives* (below)
+
+:ROW:general
+:COL:options to tune this grammar, see below
+::
+
+The options *start this computer* and *start windows explorer* now obsolete.
+
+
+:TABLE firstcoldifferent=1, border=1:
+:ROW:grammar&nbsp;words
+:COL:Here you can define your synonyms, or translations for this grammar
+
+:ROW:grammar&nbsp;name
+:COL:Here you can define the name of the grammar
+
+:ROW:letters
+:COL:List of drive letters which can be used in the *drive* command, and also on the additional *On {letters}* feature (link("details.html", "see details")
+
+:ROW:sites
+:COL:A private (Quintijn) additional feature, link("details.html", "see the details") if you are curious.
+
+:ROW:virtualdrives
+:COL:For folders that have some subfolder entries, you can make a common start. 
+A two letter combination serves as a link("virtualdrives.html", "*virtual drive*"). Delete unwanted entries. Virtual drives can be recursive.
+
+:ROW:websites
+:COL:here you can define your own *websitelist*.
+
+Note you can most often skip *http://*  and even *www.*.  See you the examples in inifile
+::
+
+
+ Options in section *general* of configuration file:
+
+:TABLE firstcoldifferent=1, border=1:
+:HEADING:general options
+:COL:comment
+::
+
+ are the folders and files of the current directory

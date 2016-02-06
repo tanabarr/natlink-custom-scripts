@@ -1,0 +1,219 @@
+include "machines.vch";
+include "git.vch";
+include "systemctl.vch";
+include "pdb.vch";
+include "package_management.vch";
+
+#PLACE(before, after) := $before $after {left_ Len($after) }
+#SHELL(pathname) := Replace($pathname, " ", "\ ");
+
+##
+## miscellaneous Shell commands
+##
+<common_actions> := (edit="vim" | source="source");
+
+<common_actions> (vim | bash) config              = "$1 ~/.$2rc"{Enter};
+history                 = {Ctrl+r};
+search history                 = "!";
+list history		= history{enter};
+break                        = {Ctrl+c};
+break end of file                        = {Ctrl+d};
+find process [(number=|file=ef)]          = "ps -ax$1";
+find files = "find / -name ''{left}";
+escape process         = {esc}{ctrl+z};
+(foreground="fg" | background="bg") process =
+    $1{enter};
+double dash                  = "--";
+Bash Tag File Update         =
+    "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."{Enter};
+make archive                     = "tar -cf ";
+extract archive                 = "tar -xf ";
+confirm force (close="{esc}:q!"|remove="rm -r")  = $1;
+back directory 1..9 = Repeat($1, ../) {Enter}; 
+change ownership          = "chown -R tanabarr:tanabarr ";
+change (permissions | mode)               = "chmod -R 755 ";
+home root                 = "~/";
+enter list                = "{enter}ls{enter}";
+change absolute directory = "{shift}cd -P .{enter}";
+present working directory = "pwd";  
+move files = "mv ";
+search text = "| grep ";
+close shell = "exit{enter}";
+
+(version="--version"|
+	short="-"|short yes="-y"|
+	long="--"|
+	help="--help"|
+	force="--force"|
+	continue="--continue"|
+	yes="-y") option = " $1";
+
+# TODO: seems ridiculous to do it like this, find a better way
+(vim=vimdiff|
+	normal=diff|
+	normal brief="diff -q") diff = "$1 \{,\}{Left_2}{Del}{Left_3}{Del}{Right}";  
+
+cygwin password = "^5%";
+
+(sub|SVM=svn) 
+   (checkout|
+	diff|
+	commit|
+	update|
+	remove|
+	checkout bug=co -b|
+	log=log_grep|
+	start bug=start_bug|
+	status) = "$1 $2 ";
+
+start environment 1..5 = "source \$ENV$1/bin/activate{enter}";
+stop environment = "deactivate{enter}"; 
+export (test|development=dev) settings = "export DJANGO_SETTINGS_MODULE=settings";
+
+Django (shell|
+	database shell=dbshell|
+	sink=syncdb|
+	sink input="syncdb < input"|
+	run="runserver 127.0.0.1:9090"|
+	dump=dumpdata) = "python mymanage.py $1{enter}";
+
+network stats = "netstat -tunlp{enter}";
+network interfaces = "ip addr";
+make link = "ln -sn ";
+(recursive="-r"|file="") copy = "cp $1 ";
+(recursive="-R"|normal="") grep = "grep $1 ''{left}";
+(read=tf|make=cf|track=xf) archive = "tar $1 ";
+extract tar = "tar xf ";
+read file = "less ";
+tail file = "tail -f ";
+list command history = "history{enter}";
+execute command = "./";
+home root = "~/";
+edit = "vim ";
+as root = "sudo ";
+switch [to] superuser = "sudo su{enter}";
+switch [to] user = "sudo su - ";
+echo command = "echo ";
+keyac shell (superuser="su") = $1;
+fix enter key = stty" "sane{enter};
+
+#common directory locations
+initialisation scripts = "/etc/init.d/";
+et cetera = "/etc/";
+system config = "/etc/sysconfig";
+my home [(one=tan|two=tom)] = When($1, "~$1/", "~tan/");
+log root = "/var/log/";
+use a lip [(pie=python)] = "/usr/lib/$1";
+
+#repeat command [1..999] = When($1, "!$1{enter}", "!!{enter}");
+GotocmdnumMod(cmdnum) := Wait(200) "!$cmdnum"{enter};
+Gotocmdnum4Mod(thousands, hundreds, tens, ones) :=
+    GotocmdnumMod(Eval($thousands*1000 + $hundreds*100 + $tens*10 + $ones));
+#repeat command 0..9                      = GotocmdnumMod($1);
+repeat command 0..9 0..9               = Gotocmdnum4Mod(0, 0, $1, $2);
+repeat command 0..9 0..9 0..9        = Gotocmdnum4Mod(0, $1, $2, $3);
+repeat command 0..9 0..9 0..9 0..9 = Gotocmdnum4Mod($1,$2, $3, $4);
+
+##
+## RH specific commands
+##
+
+Journal control = "journalctl ";
+firewall command = "firewall-cmd ";
+service control = "chkconfig ";
+service control new = "systemctl ";
+
+##
+## Directory information/listing commands
+##
+
+#<list> := ( list = ""
+#| list some of = " | head"
+#| list a lot of = " | head -n 50"
+#| local list = {ctrl+a}l{ctrl+e} # for use with sftp
+#);
+#
+#<desc> := (long = -l | full = -A | recent = -t | recursive = -R | human = -h);
+
+list = "ls -h{enter}";
+list directory = "ls -h ";
+long list = "ls -lah ";
+long list directory = "ls -lah{enter}";
+#<list> [<desc> [<desc> [<desc>]]] directory =
+#ls When($2," $2") When($3," $3") When($4," $4") $1{enter};
+#<list> <desc> directory = ls $2 $1{enter};
+#<list> directory = ls $1{enter};
+#change [to] directory = "{shift}cd ";
+go to = "cd ";
+switch directory = "{shift}cd -{enter}";
+back directory = "{shift}cd ..{enter}";
+#shell back directory = "cd " "../" {enter}; 
+(shell=""|go={enter}) back directory [1..9] = When($1, "cd ") When($2, Repeat($2, "../"), "../") $1; 
+make directory = "mkdir ";
+
+show disk space = "df -h .{enter}"; # Empty();
+
+<usage> := (usage="-h" | usage kilobytes="" | usage megabytes="-m");
+
+show disk <usage> = "du $1 -s -- .{enter}";
+#""`ls --color=none -A`"" .{enter}"; #  Empty();
+
+W get = wget;
+cool = curl;
+said shell = zsh;
+postgres sequel = postgresql;
+engine X = nginx;
+
+##
+## Macros for tcpdump
+##
+packet [to] dump = "tcpdump ";
+
+##
+## Macros for (s)ftp/ssh:
+##
+
+# make ssh connection to given machine, user pair:
+secure login [to] <machine> = "ssh -X $1{enter}";
+remote login = "ssh ";
+
+
+S F T P <machine> = "sftp $1{enter}";
+
+# see local show ... directory above (= lls ...)
+
+multiple get = "mget ";
+local change directory = "lcd ";
+
+local working directory = lpwd{enter};
+
+
+##
+## Macros for scp:
+##
+
+# add -p to preserve times, permissions:
+<scp> := ( secure copy = "scp" | secure recursive copy = "scp -r"
+| recursive secure copy = "scp -r"
+| secure clone = "scp -p -r");
+<scp> = $1;
+
+#CopyFrom(scp, origin) := PLACE("$scp " SHELL($origin), " .");
+#CopyTo (scp, target) := PLACE("$scp ", " " SHELL($target));
+
+#<scp> from <machine> [/ <UNIX> [/ <COM>]] =
+#CopyFrom($1,"$2:" When($3,$3/) When($4,$4/));
+#<scp> to <machine> [/ <UNIX> [/ <COM>]] =
+#CopyTo ($1,"$2:" WHEN3($3,$3/,~/) When($4,$4/));
+
+# smartcard related aliases
+
+#public key (15|11|12) = "pkcs$1-";
+public key (15|11|12) [(init|tool)] = "pkcs$1-$2";
+
+
+##
+## macros for zsh
+##
+
+skip on = {ctrl+f};

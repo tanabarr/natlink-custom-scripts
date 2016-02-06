@@ -1,0 +1,1051 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>unimacro, features, actions, unicode characters</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="SourceForge project for Dragon NaturallySpeaking macro facility">
+<meta name="keywords" content="features, actions, unicode, characters, unicode characters">
+<meta name="author" content="QH software, training & advies, 2002/2012 (informatie: info at sitegen.nl)">
+<link rel="stylesheet" href="../../unimacro.css" type="text/css" title="unimacro.css">
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../../unimacroie6.css" type="text/css" title="unimacroie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="../../unimacroie7.css" type="text/css" title="unimacroie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" href="../../unimacroie8.css" type="text/css" title="unimacroie8.css">
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="../../unimacroie9.css" type="text/css" title="unimacroie9.css">
+<![endif]-->
+<script language="javascript" src="../../unimacro.js" type="text/javascript"></script><link href="/unimacro/favicon.ico" rel="shortcut icon" type="image/x-icon"></head>
+<body onload="afterLoad();" onresize="onResize();"><div class="header" id="header"><!-- === start of header === -->
+
+<table border="0" cellpadding="0" cellspacing="0" class="body" width="100%">
+
+<tr><td class="banner">Unimacro</td>
+<td width="30%">&nbsp;</td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td height="15"></td></tr></table>
+
+<table border="0" cellspacing="0" class="menu" width="100%">
+<tr><td align="center" class="topoff" height="28" onclick="location='../../installation/installation.html';" onmouseout="status='';" onmouseover="status='Installation Natlink/Vocola/Unimacro';"><a href="../../installation/installation.html">Installation Natlink/Vocola/Unimacro</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topon" height="28" onclick="location='../index.html';" onmouseout="status='';" onmouseover="status='Features';"><a href="../index.html">Features</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topoff" height="28" onclick="location='../../grammars/index.html';" onmouseout="status='';" onmouseover="status='Grammars';"><a href="../../grammars/index.html">Grammars</a></td>
+<td class="topspacer" height="28" width="5">&nbsp;</td>
+<td align="center" class="topoff" height="28" onclick="location='../../aboutunimacro/index.html';" onmouseout="status='';" onmouseover="status='about Unimacro';"><a href="../../aboutunimacro/index.html">about Unimacro</a></td></tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" class="navline" width="100%">
+
+<tr><td class="navline"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="navline">&nbsp;<a href="../../index.html">home</a> > <a href="../index.html">features</a> > <a href="index.html">actions</a> > unicode characters</td></tr>
+</table></td></tr>
+</table>
+
+<!-- === end of header === --></div><div class="body" id="divbody"><table cellspacing="0" class="body" width="100%">
+<tr><td class="leftpart" id="leftpart" width="25%"><table cellspacing="0" class="leftpart" width="100%">
+<tr><td class="leftmenu" id="leftmenu"><!-- === left menu === -->
+<table class="leftmenu" cellspacing="0" width="100%">
+<tr><td class="lefton" colspan="2"><a href="index.html">Actions</a></td></tr>
+    
+<tr><td class="back" width="20">&nbsp;</td><td class="leftoff"><a href="shorthandcommands.html">Shorthand commands</a></td></tr>
+
+<tr><td class="back" width="20">&nbsp;</td><td class="leftoff"><a href="metaactions.html">Meta actions</a></td></tr>
+
+<tr><td class="back" width="20">&nbsp;</td><td class="leftoff"><a href="bringupdetails.html">BRINGUP details</a></td></tr>
+
+<tr><td class="back" width="20">&nbsp;</td><td class="lefton">Unicode characters</td></tr>
+
+<tr><td class="back" width="20">&nbsp;</td><td class="leftoff"><a href="actionsconfigurationfile.html">Actions configuration file</a></td></tr>
+
+<tr><td class="back" width="20">&nbsp;</td><td class="leftoff"><a href="actionclassesforapplications.html">Action classes for applications</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../numbers/index.html">Numbers and Spoken Forms</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../unimacroandvocola/index.html">Unimacro and Vocola</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../tracing.html">Tracing</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../inifiles.html">Inifiles</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../translations/index.html">Translations</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../cooperationwithvoicecoder/index.html">Cooperation with voicecoder</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../autohotkey/index.html">AutoHotkey</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../unittesting/index.html">Unit testing</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../grammarclasses/index.html">Grammar classes</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../globaldictation/index.html">Global dictation</a></td></tr>
+
+<tr><td class="leftoff" colspan="2"><a href="../monitorfunctions/index.html">Monitorfunctions</a></td></tr>
+</table>
+
+<!-- == end of left menu == --></td></tr>
+</table></td>
+<td class="body0" id="body0" width="76%"><table cellspacing="0" class="body" width="100%">
+<tr><td class="body" id="body" valign="top"><h1>Unicode characters</h1>
+<p>With the Unimacro shorthand command <strong>U</strong> you can paste most <strong>unicode characters</strong> to your screen, like <strong>Alpha</strong>, <strong>eacute</strong> etc. In this way with Dragon NaturallySpeaking Unicode characters can be printed in virtually any program.</p>
+
+<p>In Vocola you can choose between quotes (<strong>"U delta"</strong>) or parenthesis:  <strong>U(delta)</strong>.</p>
+
+<h3>See 
+<a href="../../features/unimacroandvocola/unimacroshorthandcommands.html">
+"section on Vocola and Unimacro</a>
+ when you want to use Unimacro Shorthand Commands in Vocola.</h3>
+
+<p>Simply put in aVocola commands file: <strong>"U delta"</strong> or <strong>U(delta)</strong>.</p>
+
+<p>Or put in some action in some grammar: <strong>action('U delta')</strong>.</p>
+
+<p>As a test put the following in your local (for example Word) or global commands file:</p>
+
+<p class="pre">test command =<br>
+"{enter}Delta (as 0394): " U(0394)<br>
+"{enter}Delta (as 394):" U(394)<br>
+"{enter}Delta (as Delta):" U(Delta)<br>
+"{enter}alpha (as alpha):" U(alpha)<br>
+"{enter}alpha (as 03B4):" U(03B1)<br>
+"{enter}Pi (as 03A0):" U(03A0)<br>
+"{enter}Pi (as 3a0):" U(3a0)<br>
+"{enter}Pi (as Pi):" U(Pi)<br>
+"{enter}wrong spades (??, other font?):" U(2660)<br>
+"{enter}Cyrillic capital letter NJE:"&nbsp;&nbsp;U(040A)<br>
+"{enter}eacute:;" U(eacute)<br>
+"{enter}unicode ETH (as U ETH):;" U(ETH)<br>
+"{enter}ascii ETH (as A 208):;" A(208)<br>
+"{enter} ETH (as U d0):;" U(d0)<br>
+"{enter} ETH (as U 00D0):;" U(00D0)<br>
+"{enter}";</p>
+
+<h3>Note the bottom 5 examples stop at eacute. This is a little mistake which will be corrected in the next version of Unimacro.</h3>
+
+<h3>Graham Cole contributed the following list. It (or part of it) can be included in a Vocola commands file (say <strong>edit global commands</strong> or <strong>edit commands</strong> for some application)</h3>
+
+<p class="pre">Greek alpha = U(alpha);<br>
+Greek beta = U(beta);<br>
+Greek big beta = U(Beta);<br>
+Greek delta = U(delta);<br>
+Greek big Delta = U(Delta);<br>
+Greek epsilon = U(epsilon);<br>
+Greek gamma = U(gamma);<br>
+Greek big gamma = U(Gamma);<br>
+Greek lambda = U(lambda);<br>
+Greek micro = U(micro);<br>
+Greek omega = U(omega);<br>
+Greek big omega = U(Omega);<br>
+Greek pi = U(pi);<br>
+Greek big pi = U(Pi);<br>
+Greek psi =U(psi);<br>
+Greek rho = U(rho);<br>
+Greek sigma = U(sigma);<br>
+Greek big sigma = U(Sigma);<br>
+Greek tau = U(tau);<br>
+Greek theta = U(theta);<br>
+Greek big theta = U(Theta);<br>
+Greek zeta = U(zeta);<br>
+Euro sign = U(euro);<br>
+Euro abbreviation = EUR;<br>
+Equivalent sign = U(equiv);<br>
+fraction one half = U(frac12);<br>
+fraction one third = U(2153);<br>
+fraction one fourth = U(frac14);<br>
+fraction one five = U(2155);<br>
+fraction one six = U(2159);<br>
+fraction five six = U(215A);<br>
+fraction one eight = U(215B);<br>
+fraction three eight = U(215C);<br>
+fraction five eight = U(215D);<br>
+fraction seven eight = U(215E);<br>
+fraction two third = U(2154);<br>
+fraction two fifth = U(2156);<br>
+fraction three quarter = U(frac34);<br>
+fraction three fifth = U(2157);<br>
+fraction four fifth = U(2158);<br>
+Right Arrow Sign = U(rarr);<br>
+Double Right Arrow = U(rArr);<br>
+Left Arrow Sign = U(larr);<br>
+Double Left Arrow = U(lArr);<br>
+Down Arrow Sign = U(darr);<br>
+Double Down Arrow = U(dArr);<br>
+Up Arrow Sign = U(uarr);<br>
+Double Up Arrow = U(uArr);<br>
+Paragraph Mark = U(para);<br>
+</p>
+
+<h3>Combining with other things</h3>
+<p>Next example shows how you can surround the Right Arrow Sign by spaces:</p>
+
+<p class="pre">Right Arrow Sign = {space} U(rarr) {space};</p>
+<h2>HtmlEntityRefs</h2>
+<h3>Codes that are also known as "htmlentityrefs" for html are presented here:</h3>
+<table border="1" cellspacing="0" class="table" width="100%">
+<tr><td>AElig</td>
+<td align="center">&AElig;</td>
+<td class="spacer"></td>
+<td>Omicron</td>
+<td align="center">&Omicron;</td>
+<td class="spacer"></td>
+<td>auml</td>
+<td align="center">&auml;</td>
+<td class="spacer"></td>
+<td>exist</td>
+<td align="center">&exist;</td>
+<td class="spacer"></td>
+<td>loz</td>
+<td align="center">&loz;</td>
+<td class="spacer"></td>
+<td>para</td>
+<td align="center">&para;</td>
+<td class="spacer"></td>
+<td>spades</td>
+<td align="center">&spades;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Aacute</td>
+<td align="center">&Aacute;</td>
+<td class="spacer"></td>
+<td>Oslash</td>
+<td align="center">&Oslash;</td>
+<td class="spacer"></td>
+<td>bdquo</td>
+<td align="center">&bdquo;</td>
+<td class="spacer"></td>
+<td>fnof</td>
+<td align="center">&fnof;</td>
+<td class="spacer"></td>
+<td>lrm</td>
+<td align="center">&lrm;</td>
+<td class="spacer"></td>
+<td>part</td>
+<td align="center">&part;</td>
+<td class="spacer"></td>
+<td>sub</td>
+<td align="center">&sub;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Acirc</td>
+<td align="center">&Acirc;</td>
+<td class="spacer"></td>
+<td>Otilde</td>
+<td align="center">&Otilde;</td>
+<td class="spacer"></td>
+<td>beta</td>
+<td align="center">&beta;</td>
+<td class="spacer"></td>
+<td>forall</td>
+<td align="center">&forall;</td>
+<td class="spacer"></td>
+<td>lsaquo</td>
+<td align="center">&lsaquo;</td>
+<td class="spacer"></td>
+<td>permil</td>
+<td align="center">&permil;</td>
+<td class="spacer"></td>
+<td>sube</td>
+<td align="center">&sube;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Agrave</td>
+<td align="center">&Agrave;</td>
+<td class="spacer"></td>
+<td>Ouml</td>
+<td align="center">&Ouml;</td>
+<td class="spacer"></td>
+<td>brvbar</td>
+<td align="center">&brvbar;</td>
+<td class="spacer"></td>
+<td>frac12</td>
+<td align="center">&frac12;</td>
+<td class="spacer"></td>
+<td>lsquo</td>
+<td align="center">&lsquo;</td>
+<td class="spacer"></td>
+<td>perp</td>
+<td align="center">&perp;</td>
+<td class="spacer"></td>
+<td>sum</td>
+<td align="center">&sum;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Alpha</td>
+<td align="center">&Alpha;</td>
+<td class="spacer"></td>
+<td>Phi</td>
+<td align="center">&Phi;</td>
+<td class="spacer"></td>
+<td>bull</td>
+<td align="center">&bull;</td>
+<td class="spacer"></td>
+<td>frac14</td>
+<td align="center">&frac14;</td>
+<td class="spacer"></td>
+<td>lt</td>
+<td align="center">&lt;</td>
+<td class="spacer"></td>
+<td>phi</td>
+<td align="center">&phi;</td>
+<td class="spacer"></td>
+<td>sup</td>
+<td align="center">&sup;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Aring</td>
+<td align="center">&Aring;</td>
+<td class="spacer"></td>
+<td>Pi</td>
+<td align="center">&Pi;</td>
+<td class="spacer"></td>
+<td>cap</td>
+<td align="center">&cap;</td>
+<td class="spacer"></td>
+<td>frac34</td>
+<td align="center">&frac34;</td>
+<td class="spacer"></td>
+<td>macr</td>
+<td align="center">&macr;</td>
+<td class="spacer"></td>
+<td>pi</td>
+<td align="center">&pi;</td>
+<td class="spacer"></td>
+<td>sup1</td>
+<td align="center">&sup1;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Atilde</td>
+<td align="center">&Atilde;</td>
+<td class="spacer"></td>
+<td>Prime</td>
+<td align="center">&Prime;</td>
+<td class="spacer"></td>
+<td>ccedil</td>
+<td align="center">&ccedil;</td>
+<td class="spacer"></td>
+<td>frasl</td>
+<td align="center">&frasl;</td>
+<td class="spacer"></td>
+<td>mdash</td>
+<td align="center">&mdash;</td>
+<td class="spacer"></td>
+<td>piv</td>
+<td align="center">&piv;</td>
+<td class="spacer"></td>
+<td>sup2</td>
+<td align="center">&sup2;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Auml</td>
+<td align="center">&Auml;</td>
+<td class="spacer"></td>
+<td>Psi</td>
+<td align="center">&Psi;</td>
+<td class="spacer"></td>
+<td>cedil</td>
+<td align="center">&cedil;</td>
+<td class="spacer"></td>
+<td>gamma</td>
+<td align="center">&gamma;</td>
+<td class="spacer"></td>
+<td>micro</td>
+<td align="center">&micro;</td>
+<td class="spacer"></td>
+<td>plusmn</td>
+<td align="center">&plusmn;</td>
+<td class="spacer"></td>
+<td>sup3</td>
+<td align="center">&sup3;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Beta</td>
+<td align="center">&Beta;</td>
+<td class="spacer"></td>
+<td>Rho</td>
+<td align="center">&Rho;</td>
+<td class="spacer"></td>
+<td>cent</td>
+<td align="center">&cent;</td>
+<td class="spacer"></td>
+<td>ge</td>
+<td align="center">&ge;</td>
+<td class="spacer"></td>
+<td>middot</td>
+<td align="center">&middot;</td>
+<td class="spacer"></td>
+<td>pound</td>
+<td align="center">&pound;</td>
+<td class="spacer"></td>
+<td>supe</td>
+<td align="center">&supe;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Ccedil</td>
+<td align="center">&Ccedil;</td>
+<td class="spacer"></td>
+<td>Scaron</td>
+<td align="center">&Scaron;</td>
+<td class="spacer"></td>
+<td>chi</td>
+<td align="center">&chi;</td>
+<td class="spacer"></td>
+<td>gt</td>
+<td align="center">&gt;</td>
+<td class="spacer"></td>
+<td>minus</td>
+<td align="center">&minus;</td>
+<td class="spacer"></td>
+<td>prime</td>
+<td align="center">&prime;</td>
+<td class="spacer"></td>
+<td>szlig</td>
+<td align="center">&szlig;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Chi</td>
+<td align="center">&Chi;</td>
+<td class="spacer"></td>
+<td>Sigma</td>
+<td align="center">&Sigma;</td>
+<td class="spacer"></td>
+<td>circ</td>
+<td align="center">&circ;</td>
+<td class="spacer"></td>
+<td>hArr</td>
+<td align="center">&hArr;</td>
+<td class="spacer"></td>
+<td>mu</td>
+<td align="center">&mu;</td>
+<td class="spacer"></td>
+<td>prod</td>
+<td align="center">&prod;</td>
+<td class="spacer"></td>
+<td>tau</td>
+<td align="center">&tau;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Dagger</td>
+<td align="center">&Dagger;</td>
+<td class="spacer"></td>
+<td>THORN</td>
+<td align="center">&THORN;</td>
+<td class="spacer"></td>
+<td>clubs</td>
+<td align="center">&clubs;</td>
+<td class="spacer"></td>
+<td>harr</td>
+<td align="center">&harr;</td>
+<td class="spacer"></td>
+<td>nabla</td>
+<td align="center">&nabla;</td>
+<td class="spacer"></td>
+<td>prop</td>
+<td align="center">&prop;</td>
+<td class="spacer"></td>
+<td>there4</td>
+<td align="center">&there4;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Delta</td>
+<td align="center">&Delta;</td>
+<td class="spacer"></td>
+<td>Tau</td>
+<td align="center">&Tau;</td>
+<td class="spacer"></td>
+<td>cong</td>
+<td align="center">&cong;</td>
+<td class="spacer"></td>
+<td>hearts</td>
+<td align="center">&hearts;</td>
+<td class="spacer"></td>
+<td>nbsp</td>
+<td align="center">&nbsp;</td>
+<td class="spacer"></td>
+<td>psi</td>
+<td align="center">&psi;</td>
+<td class="spacer"></td>
+<td>theta</td>
+<td align="center">&theta;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>ETH</td>
+<td align="center">&ETH;</td>
+<td class="spacer"></td>
+<td>Theta</td>
+<td align="center">&Theta;</td>
+<td class="spacer"></td>
+<td>copy</td>
+<td align="center">&copy;</td>
+<td class="spacer"></td>
+<td>hellip</td>
+<td align="center">&hellip;</td>
+<td class="spacer"></td>
+<td>ndash</td>
+<td align="center">&ndash;</td>
+<td class="spacer"></td>
+<td>quot</td>
+<td align="center">"</td>
+<td class="spacer"></td>
+<td>thetasym</td>
+<td align="center">&thetasym;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Eacute</td>
+<td align="center">&Eacute;</td>
+<td class="spacer"></td>
+<td>Uacute</td>
+<td align="center">&Uacute;</td>
+<td class="spacer"></td>
+<td>crarr</td>
+<td align="center">&crarr;</td>
+<td class="spacer"></td>
+<td>iacute</td>
+<td align="center">&iacute;</td>
+<td class="spacer"></td>
+<td>ne</td>
+<td align="center">&ne;</td>
+<td class="spacer"></td>
+<td>rArr</td>
+<td align="center">&rArr;</td>
+<td class="spacer"></td>
+<td>thinsp</td>
+<td align="center">&thinsp;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Ecirc</td>
+<td align="center">&Ecirc;</td>
+<td class="spacer"></td>
+<td>Ucirc</td>
+<td align="center">&Ucirc;</td>
+<td class="spacer"></td>
+<td>cup</td>
+<td align="center">&cup;</td>
+<td class="spacer"></td>
+<td>icirc</td>
+<td align="center">&icirc;</td>
+<td class="spacer"></td>
+<td>ni</td>
+<td align="center">&ni;</td>
+<td class="spacer"></td>
+<td>radic</td>
+<td align="center">&radic;</td>
+<td class="spacer"></td>
+<td>thorn</td>
+<td align="center">&thorn;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Egrave</td>
+<td align="center">&Egrave;</td>
+<td class="spacer"></td>
+<td>Ugrave</td>
+<td align="center">&Ugrave;</td>
+<td class="spacer"></td>
+<td>curren</td>
+<td align="center">&curren;</td>
+<td class="spacer"></td>
+<td>iexcl</td>
+<td align="center">&iexcl;</td>
+<td class="spacer"></td>
+<td>not</td>
+<td align="center">&not;</td>
+<td class="spacer"></td>
+<td>rang</td>
+<td align="center">&rang;</td>
+<td class="spacer"></td>
+<td>tilde</td>
+<td align="center">&tilde;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Epsilon</td>
+<td align="center">&Epsilon;</td>
+<td class="spacer"></td>
+<td>Upsilon</td>
+<td align="center">&Upsilon;</td>
+<td class="spacer"></td>
+<td>dArr</td>
+<td align="center">&dArr;</td>
+<td class="spacer"></td>
+<td>igrave</td>
+<td align="center">&igrave;</td>
+<td class="spacer"></td>
+<td>notin</td>
+<td align="center">&notin;</td>
+<td class="spacer"></td>
+<td>raquo</td>
+<td align="center">&raquo;</td>
+<td class="spacer"></td>
+<td>times</td>
+<td align="center">&times;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Eta</td>
+<td align="center">&Eta;</td>
+<td class="spacer"></td>
+<td>Uuml</td>
+<td align="center">&Uuml;</td>
+<td class="spacer"></td>
+<td>dagger</td>
+<td align="center">&dagger;</td>
+<td class="spacer"></td>
+<td>image</td>
+<td align="center">&image;</td>
+<td class="spacer"></td>
+<td>nsub</td>
+<td align="center">&nsub;</td>
+<td class="spacer"></td>
+<td>rarr</td>
+<td align="center">&rarr;</td>
+<td class="spacer"></td>
+<td>trade</td>
+<td align="center">&trade;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Euml</td>
+<td align="center">&Euml;</td>
+<td class="spacer"></td>
+<td>Xi</td>
+<td align="center">&Xi;</td>
+<td class="spacer"></td>
+<td>darr</td>
+<td align="center">&darr;</td>
+<td class="spacer"></td>
+<td>infin</td>
+<td align="center">&infin;</td>
+<td class="spacer"></td>
+<td>ntilde</td>
+<td align="center">&ntilde;</td>
+<td class="spacer"></td>
+<td>rceil</td>
+<td align="center">&rceil;</td>
+<td class="spacer"></td>
+<td>uArr</td>
+<td align="center">&uArr;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Gamma</td>
+<td align="center">&Gamma;</td>
+<td class="spacer"></td>
+<td>Yacute</td>
+<td align="center">&Yacute;</td>
+<td class="spacer"></td>
+<td>deg</td>
+<td align="center">&deg;</td>
+<td class="spacer"></td>
+<td>int</td>
+<td align="center">&int;</td>
+<td class="spacer"></td>
+<td>nu</td>
+<td align="center">&nu;</td>
+<td class="spacer"></td>
+<td>rdquo</td>
+<td align="center">&rdquo;</td>
+<td class="spacer"></td>
+<td>uacute</td>
+<td align="center">&uacute;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Iacute</td>
+<td align="center">&Iacute;</td>
+<td class="spacer"></td>
+<td>Yuml</td>
+<td align="center">&Yuml;</td>
+<td class="spacer"></td>
+<td>delta</td>
+<td align="center">&delta;</td>
+<td class="spacer"></td>
+<td>iota</td>
+<td align="center">&iota;</td>
+<td class="spacer"></td>
+<td>oacute</td>
+<td align="center">&oacute;</td>
+<td class="spacer"></td>
+<td>real</td>
+<td align="center">&real;</td>
+<td class="spacer"></td>
+<td>uarr</td>
+<td align="center">&uarr;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Icirc</td>
+<td align="center">&Icirc;</td>
+<td class="spacer"></td>
+<td>Zeta</td>
+<td align="center">&Zeta;</td>
+<td class="spacer"></td>
+<td>diams</td>
+<td align="center">&diams;</td>
+<td class="spacer"></td>
+<td>iquest</td>
+<td align="center">&iquest;</td>
+<td class="spacer"></td>
+<td>ocirc</td>
+<td align="center">&ocirc;</td>
+<td class="spacer"></td>
+<td>reg</td>
+<td align="center">&reg;</td>
+<td class="spacer"></td>
+<td>ucirc</td>
+<td align="center">&ucirc;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Igrave</td>
+<td align="center">&Igrave;</td>
+<td class="spacer"></td>
+<td>aacute</td>
+<td align="center">&aacute;</td>
+<td class="spacer"></td>
+<td>divide</td>
+<td align="center">&divide;</td>
+<td class="spacer"></td>
+<td>isin</td>
+<td align="center">&isin;</td>
+<td class="spacer"></td>
+<td>oelig</td>
+<td align="center">&oelig;</td>
+<td class="spacer"></td>
+<td>rfloor</td>
+<td align="center">&rfloor;</td>
+<td class="spacer"></td>
+<td>ugrave</td>
+<td align="center">&ugrave;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Iota</td>
+<td align="center">&Iota;</td>
+<td class="spacer"></td>
+<td>acirc</td>
+<td align="center">&acirc;</td>
+<td class="spacer"></td>
+<td>eacute</td>
+<td align="center">&eacute;</td>
+<td class="spacer"></td>
+<td>iuml</td>
+<td align="center">&iuml;</td>
+<td class="spacer"></td>
+<td>ograve</td>
+<td align="center">&ograve;</td>
+<td class="spacer"></td>
+<td>rho</td>
+<td align="center">&rho;</td>
+<td class="spacer"></td>
+<td>uml</td>
+<td align="center">&uml;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Iuml</td>
+<td align="center">&Iuml;</td>
+<td class="spacer"></td>
+<td>acute</td>
+<td align="center">&acute;</td>
+<td class="spacer"></td>
+<td>ecirc</td>
+<td align="center">&ecirc;</td>
+<td class="spacer"></td>
+<td>kappa</td>
+<td align="center">&kappa;</td>
+<td class="spacer"></td>
+<td>oline</td>
+<td align="center">&oline;</td>
+<td class="spacer"></td>
+<td>rlm</td>
+<td align="center">&rlm;</td>
+<td class="spacer"></td>
+<td>upsih</td>
+<td align="center">&upsih;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Kappa</td>
+<td align="center">&Kappa;</td>
+<td class="spacer"></td>
+<td>aelig</td>
+<td align="center">&aelig;</td>
+<td class="spacer"></td>
+<td>egrave</td>
+<td align="center">&egrave;</td>
+<td class="spacer"></td>
+<td>lArr</td>
+<td align="center">&lArr;</td>
+<td class="spacer"></td>
+<td>omega</td>
+<td align="center">&omega;</td>
+<td class="spacer"></td>
+<td>rsaquo</td>
+<td align="center">&rsaquo;</td>
+<td class="spacer"></td>
+<td>upsilon</td>
+<td align="center">&upsilon;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Lambda</td>
+<td align="center">&Lambda;</td>
+<td class="spacer"></td>
+<td>agrave</td>
+<td align="center">&agrave;</td>
+<td class="spacer"></td>
+<td>empty</td>
+<td align="center">&empty;</td>
+<td class="spacer"></td>
+<td>lambda</td>
+<td align="center">&lambda;</td>
+<td class="spacer"></td>
+<td>omicron</td>
+<td align="center">&omicron;</td>
+<td class="spacer"></td>
+<td>rsquo</td>
+<td align="center">&rsquo;</td>
+<td class="spacer"></td>
+<td>uuml</td>
+<td align="center">&uuml;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Mu</td>
+<td align="center">&Mu;</td>
+<td class="spacer"></td>
+<td>alefsym</td>
+<td align="center">&alefsym;</td>
+<td class="spacer"></td>
+<td>emsp</td>
+<td align="center">&emsp;</td>
+<td class="spacer"></td>
+<td>lang</td>
+<td align="center">&lang;</td>
+<td class="spacer"></td>
+<td>oplus</td>
+<td align="center">&oplus;</td>
+<td class="spacer"></td>
+<td>sbquo</td>
+<td align="center">&sbquo;</td>
+<td class="spacer"></td>
+<td>weierp</td>
+<td align="center">&weierp;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Ntilde</td>
+<td align="center">&Ntilde;</td>
+<td class="spacer"></td>
+<td>alpha</td>
+<td align="center">&alpha;</td>
+<td class="spacer"></td>
+<td>ensp</td>
+<td align="center">&ensp;</td>
+<td class="spacer"></td>
+<td>laquo</td>
+<td align="center">&laquo;</td>
+<td class="spacer"></td>
+<td>or</td>
+<td align="center">&or;</td>
+<td class="spacer"></td>
+<td>scaron</td>
+<td align="center">&scaron;</td>
+<td class="spacer"></td>
+<td>xi</td>
+<td align="center">&xi;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Nu</td>
+<td align="center">&Nu;</td>
+<td class="spacer"></td>
+<td>amp</td>
+<td align="center">&amp;</td>
+<td class="spacer"></td>
+<td>epsilon</td>
+<td align="center">&epsilon;</td>
+<td class="spacer"></td>
+<td>larr</td>
+<td align="center">&larr;</td>
+<td class="spacer"></td>
+<td>ordf</td>
+<td align="center">&ordf;</td>
+<td class="spacer"></td>
+<td>sdot</td>
+<td align="center">&sdot;</td>
+<td class="spacer"></td>
+<td>yacute</td>
+<td align="center">&yacute;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>OElig</td>
+<td align="center">&OElig;</td>
+<td class="spacer"></td>
+<td>and</td>
+<td align="center">&and;</td>
+<td class="spacer"></td>
+<td>equiv</td>
+<td align="center">&equiv;</td>
+<td class="spacer"></td>
+<td>lceil</td>
+<td align="center">&lceil;</td>
+<td class="spacer"></td>
+<td>ordm</td>
+<td align="center">&ordm;</td>
+<td class="spacer"></td>
+<td>sect</td>
+<td align="center">&sect;</td>
+<td class="spacer"></td>
+<td>yen</td>
+<td align="center">&yen;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Oacute</td>
+<td align="center">&Oacute;</td>
+<td class="spacer"></td>
+<td>ang</td>
+<td align="center">&ang;</td>
+<td class="spacer"></td>
+<td>eta</td>
+<td align="center">&eta;</td>
+<td class="spacer"></td>
+<td>ldquo</td>
+<td align="center">&ldquo;</td>
+<td class="spacer"></td>
+<td>oslash</td>
+<td align="center">&oslash;</td>
+<td class="spacer"></td>
+<td>shy</td>
+<td align="center">&shy;</td>
+<td class="spacer"></td>
+<td>yuml</td>
+<td align="center">&yuml;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Ocirc</td>
+<td align="center">&Ocirc;</td>
+<td class="spacer"></td>
+<td>aring</td>
+<td align="center">&aring;</td>
+<td class="spacer"></td>
+<td>eth</td>
+<td align="center">&eth;</td>
+<td class="spacer"></td>
+<td>le</td>
+<td align="center">&le;</td>
+<td class="spacer"></td>
+<td>otilde</td>
+<td align="center">&otilde;</td>
+<td class="spacer"></td>
+<td>sigma</td>
+<td align="center">&sigma;</td>
+<td class="spacer"></td>
+<td>zeta</td>
+<td align="center">&zeta;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Ograve</td>
+<td align="center">&Ograve;</td>
+<td class="spacer"></td>
+<td>asymp</td>
+<td align="center">&asymp;</td>
+<td class="spacer"></td>
+<td>euml</td>
+<td align="center">&euml;</td>
+<td class="spacer"></td>
+<td>lfloor</td>
+<td align="center">&lfloor;</td>
+<td class="spacer"></td>
+<td>otimes</td>
+<td align="center">&otimes;</td>
+<td class="spacer"></td>
+<td>sigmaf</td>
+<td align="center">&sigmaf;</td>
+<td class="spacer"></td>
+<td>zwj</td>
+<td align="center">&zwj;</td>
+<td class="spacer"></td></tr>
+
+
+<tr><td>Omega</td>
+<td align="center">&Omega;</td>
+<td class="spacer"></td>
+<td>atilde</td>
+<td align="center">&atilde;</td>
+<td class="spacer"></td>
+<td>euro</td>
+<td align="center">&euro;</td>
+<td class="spacer"></td>
+<td>lowast</td>
+<td align="center">&lowast;</td>
+<td class="spacer"></td>
+<td>ouml</td>
+<td align="center">&ouml;</td>
+<td class="spacer"></td>
+<td>sim</td>
+<td align="center">&sim;</td>
+<td class="spacer"></td>
+<td>zwnj</td>
+<td align="center">&zwnj;</td>
+<td class="spacer"></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></div><div class="footer" id="footer"><!-- === start of footer === -->
+
+<table border="0" cellpadding="0" cellspacing="0" class="bottomline" width="100%">
+
+<tr><td class="navline"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td class="navline">&nbsp;<a href="../../index.html">home</a> > <a href="../index.html">features</a> > <a href="index.html">actions</a> > unicode characters > 
+<a href="javascript:scrollTo(0,0);">top</a></td></tr>
+</table></td>
+<td class="sitemapbutton" onclick="location='../../sitemap.html#unicodecharacters';" onmouseout="status='';" onmouseover="status='go to the sitemap';"><a href="../../sitemap.html#unicodecharacters">sitemap</a></td>
+<td class="navline" width="5"></td>
+<td class="emailbutton" onclick="" onmouseout="status='';" onmouseover="status='send e-mail';"><noscript class="underline">q.hoogenboom</noscript>
+<script language="javascript" type="text/javascript"><!--
+m("antenna.nl", "q.hoogenboom", "information about: unicode characters", "e-mail");
+// --></script>
+<noscript class="underline">at&nbsp;antenna.nl</noscript></td>
+<td class="navline" width="5"></td>
+<td class="copyright">&copy;&nbsp;<strong>unimacro</strong>,&nbsp;okt 2014</td>
+<td class="copprintonly">&copy;&nbsp;<strong>unimacro</strong>,&nbsp;okt 2014<br> | a SourceForge Project by Quintijn Hoogenboom, Ben Staniford, Bart Jan van Os, Frank Olaf Sem-Jacobsen.</td></tr>
+</table>
+
+<!-- === end of footer === --></div>
+<script language="javascript" type="text/javascript"><!--
+function onResizeFunctions(){
+bodyHeight(170);
+}
+
+function onLoadFunctions(){
+onResizeFunctions();
+
+return;
+}
+
+// --></script>
+
+</body></html>

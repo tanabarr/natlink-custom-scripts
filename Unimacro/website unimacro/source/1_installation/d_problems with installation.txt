@@ -1,0 +1,49 @@
+Problems with installation?
+
+
+ When starting NatSpeak after configuration three things can go wrong:
+ 
+-NatSpeak gives message: *Cannot load compatibility module support (GUID = {dd990001-bb89-1d2-b031-0060088dc929}))*.
+-The *Messages from NatLink* window (before release 4.1hotel "Messages from Python Macros") comes up, but only an error message is thrown.
+-Nothing happens.
+
+There has been quite a bit of confusion about these three problems. You can try and check the following:
+
+-Remove *natlink.pyd* in the NatLink\MacroSystem\Core directory and run the Config program
+-Be sure to start the Config program in elevated mode. The link in the startup menu should do so.
+-Be sure you have one of the supported combinations of Dragon and Python:
+--Release 4.0 supports Dragon until 11, and Python 2.3, 2.5, 2.6 and 2.7. 
+--Release 4.1 supports Dragon 12 too, and Python 2.6 and 2.7. For Dragon until 11 also Python 2.5 is still supported.
+--For Windows 8 only try Python 2.6 or 2.7
+--DO NOT USE *64 bit* Python versions. From release 4.1hotel onwards the config program checks this and warns you if you accidentaly installed a 64 bit python version.
+
+
+ Did you choose *install for all users* when asked for when installing python?
+If not, please uninstall all python things, and reinstall python, choosing this option.
+
+ Did you install Natlink in C:\NatLink (or D:\NatLink, ...)?
+If you installed NatLink in *C:\Program files\NatLink* you may get problems.
+
+If you did so, please Uninstall NatLink, and reinstall on *C:\NatLink*, or on another drive of your choice (like D:\NatLink).
+
+ "No valid DNS INI files Dir found"
+These should automatically found by the installer program. If not, they can be specified in the info panel of the configure GUI, or with the "c" option in the configfunctions program.
+
+The most probable path is *C:\ProgramData\Application Data\Nuance\NaturallySpeaking12*. For Dragon 11 the same, with *11* instead of *12*.
+
+
+ Actions.ini
+
+-The file actions.ini cannot be found anywhere. See link(ini file strategy.html, the next page: Ini file strategy).
+
+ Changed python version
+If you changed your python version, *eg from 2.5 to 2.7* running the Config program should note this and do the necessary changes. If not, you can try to remove all previous Python (related) installs.
+
+ Configuration GUI or Configuration CLI do not run
+
+-It can happen that the python shortcut has been changed. You can either:
+--Open start_configurenatlink.py or start_natlinkconfigfunctions.py in IDLE and run from there
+--Assign *python.exe* to the *start_configurenatlink.py* file (or any *.py* python file) by right clicking on the file (in an explorer window), and choose Open with, Choose default program, and then choose python.exe.
+
+   If nothing else works
+You can manually disable NatLink by changing the file *nsapps.ini*. See page link(problemswithnatlink.html, problems with NatLink), near the bottom.
