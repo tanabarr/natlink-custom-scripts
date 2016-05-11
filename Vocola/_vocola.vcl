@@ -326,5 +326,5 @@ cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
 Windows host name = "tanabarr-mobl.ger.corp.intel.com";
 windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
-said file system = "zfs";
+she said [file system] = "zfs";
 get it fetch = "git fetch ssh://tanabarr@review.whamcloud.com:29418/chroma refs/changes/44/19344/10 && git checkout FETCH_HEAD";

@@ -119,6 +119,7 @@ system config = "/etc/sysconfig";
 my home [(one=tan|two=tom)] = When($1, "~$1/", "~tan/");
 log root = "/var/log/";
 use a lip [(pie=python)] = "/usr/lib/$1";
+(manager|dependencies|bundles|agent|similar) = "chroma-$1/";
 
 ##
 ## command history
@@ -174,7 +175,6 @@ show disk <usage> = "du $1 -s -- .{enter}";
 
 W get = wget;
 cool = curl;
-[she] said shell = zsh;
 postgres sequel = postgresql;
 engine X = nginx;
 
