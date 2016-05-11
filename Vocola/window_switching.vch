@@ -40,24 +40,49 @@ go to <exe_apps> = focusNatlink() Window.Go(app>$1);
 
 # bounce to spotify, perform various actions and return to caller window
 
-spotify [window] favourite = Variable.Set(:old, Window.ID())
-    focusNatlink()
-    Window.Go(app>Spotify.exe) 
-    HeardWord(mouse, window, seven, seven, three, nine, click)
-    minWindow() Window.Go(ID> Variable.Get(:old));
+#spotify [window] favourite = Variable.Set(:old, Window.ID())
+#    focusNatlink()
+#    Window.Go(app>Spotify.exe) 
+#    HeardWord(mouse, window, seven, seven, three, nine, click)
+#    minWindow() Window.Go(ID> Variable.Get(:old));
 
-spotify [window] (space={space} | skip={ctrl+right}) = Variable.Set(:old, Window.ID())
-    Window.Go(app>Spotify.exe) Wait(200) $1 minWindow() 
+spotify window (space={space} | 
+                skip={ctrl+right} | 
+                volume up={ctrl+up} | 
+                volume down={ctrl+down} | 
+                mute sound=Repeat(10, {ctrl+down})) [1..9] = 
+    Variable.Set(:old, Window.ID())
+    focusNatlink()
+    Window.Go(app>Spotify.exe) Wait(200) When($2, Repeat($2, $1), $1) 
+    minWindow() 
     Window.Go(ID> Variable.Get(:old));
 
 spotify search <_anything> = focusNatlink() Window.Go(app>Spotify.exe) 
     {ctrl+l} {ctrl+a} Wait(200) $1;
 
-# bounce to browser
+# bounce to chrome browser
 
 chrome page (down=dn|up) = Variable.Set(:old, Window.ID()) focusNatlink() 
     Window.Go(app>chrome.exe) Wait(200) {pg$1} focusNatlink()
     Window.Go(ID> Variable.Get(:old));
+
+# open firefox browser
+
+page with Firefox = focusNatlink() 
+    Window.Go(app>firefox.exe) Wait(500) {ctrl+t} Wait(200) {ctrl+v} {enter};
+
+# bounce to putty and issue last command
+
+bash last command = Variable.Set(:old, Window.ID()) focusNatlink() 
+    Window.Go(app>putty.exe) Wait(200) {up}{enter} focusNatlink()
+    Window.Go(ID> Variable.Get(:old));
+
+# sonos app
+
+Sonos volume (up="+"|down"-") [1..9] = Variable.Set(:old, Window.ID())
+    Window.Go(app>Sonos.exe) Wait(200) Repeat($2, {ctrl+$1}) minWindow() 
+    Window.Go(ID> Variable.Get(:old));
+
 
 ## pin programs to taskbar in fixed order, hardcoded mapping to try to improve reliability, collapsed tasks can be selected after
 #<apps> := (crome=0
@@ -116,3 +141,28 @@ reset <area> area = ResetArea($1);
 #
 #<area> save = Save() GoArea($1);
 #<area> [save] [<dump>] <op> = Save() GoArea($1) $3 $2;
+
+##
+## test commands for window identification
+##
+
+#show window ID = MsgBoxConfirm(Window.ID(), 64, "Window ID");
+#show window class = MsgBoxConfirm(Window.Class(), 64, "Window class");
+#show window title = MsgBoxConfirm(Window.Title(), 64, "Window title");
+#show window app = MsgBoxConfirm(Window.App(), 64, "Window app");
+#
+#show window info = MsgBoxConfirm(
+#Window.ID() ":"	Eval("chr(13)")
+#" title: " Window.Title() Eval("chr(13)")
+#" class: " Window.Class() Eval("chr(13)")
+#" app: " Window.App()	Eval("chr(13)")
+#, 64, "Window info");
+#
+Mark list windows <_anything> = When($1, Window.ListWindows($1), Window.ListWindows());
+#
+#
+
+#please sir is this Emacs = If(Window.Match("emacs"), 
+#MsgBoxConfirm("Yes", 64, "Is this emacs?"),
+#MsgBoxConfirm("No", 64, "Is this emacs?"));
+

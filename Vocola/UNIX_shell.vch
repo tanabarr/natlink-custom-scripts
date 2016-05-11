@@ -1,8 +1,9 @@
-include "machines.vch";
+#include "machines.vch";
 include "git.vch";
 include "systemctl.vch";
 include "pdb.vch";
 include "package_management.vch";
+include "service_control.vch";
 
 #PLACE(before, after) := $before $after {left_ Len($after) }
 #SHELL(pathname) := Replace($pathname, " ", "\ ");
@@ -10,33 +11,64 @@ include "package_management.vch";
 ##
 ## miscellaneous Shell commands
 ##
-<common_actions> := (edit="vim" | source="source");
+<common_actions> := (
+    source="source "|
+    find process="ps ax"|
+    find process file="ps ef"|
+    find files="find / -name ''{left}"|
+    make archive="tar -cf "|
+    extract archive="tar -xf "|
+    track archive="tar -xf "|
+    read archive="tar -tf "|
+    change ownership="chown -R tanabarr:tanabarr "|
+    change permissions="chmod -R 755 "|
+    move files="mv "|
+    remove file="rm "|
+    network stats="netstat -tunlp{enter}"|
+    network interfaces="ip addr{enter}"|
+    make link="ln -sn "|
+    grep="grep ''{left}"|
+    recursive grep="grep -R ''{left}"|
+    read file="less "|
+    tail file="tail -f "|
+    list command history="history{enter}"|
+    execute command="./"|
+    home root="~/"|
+    edit="vim "|
+    list="ls -h{enter}"|
+    list directory="ls -h "|
+    long list="ls -lah{enter}"|
+    long list directory="ls -lah "|
+    make directory="mkdir "|
+    show disk space="df -h .{enter}"|
+    echo command="echo "
+);
+[(as root="sudo ")] <common_actions> = "$1$2";
 
-<common_actions> (vim | bash) config              = "$1 ~/.$2rc"{Enter};
+switch [to] (superuser={enter}|user=) = "sudo su - $1";
+keyac shell (superuser="su")=$1;
+
+#    (recursive="-r"|file="") copy = "cp $1 ";
+#    <scp> := ( secure copy = "scp " | secure recursive copy = "scp -r "
+#    | recursive secure copy = "scp -r "
+#    | secure clone = "scp -p -r ");
+
 history                 = {Ctrl+r};
 search history                 = "!";
 list history		= history{enter};
 break                        = {Ctrl+c};
 break end of file                        = {Ctrl+d};
-find process [(number=|file=ef)]          = "ps -ax$1";
-find files = "find / -name ''{left}";
 escape process         = {esc}{ctrl+z};
 (foreground="fg" | background="bg") process =
     $1{enter};
 double dash                  = "--";
 Bash Tag File Update         =
     "ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."{Enter};
-make archive                     = "tar -cf ";
-extract archive                 = "tar -xf ";
 confirm force (close="{esc}:q!"|remove="rm -r")  = $1;
 back directory 1..9 = Repeat($1, ../) {Enter}; 
-change ownership          = "chown -R tanabarr:tanabarr ";
-change (permissions | mode)               = "chmod -R 755 ";
-home root                 = "~/";
 enter list                = "{enter}ls{enter}";
 change absolute directory = "{shift}cd -P .{enter}";
 present working directory = "pwd";  
-move files = "mv ";
 search text = "| grep ";
 close shell = "exit{enter}";
 
@@ -53,18 +85,19 @@ close shell = "exit{enter}";
 	normal=diff|
 	normal brief="diff -q") diff = "$1 \{,\}{Left_2}{Del}{Left_3}{Del}{Right}";  
 
-cygwin password = "^5%";
-
-(sub|SVM=svn) 
-   (checkout|
-	diff|
-	commit|
-	update|
-	remove|
-	checkout bug=co -b|
-	log=log_grep|
-	start bug=start_bug|
-	status) = "$1 $2 ";
+### currently unused
+#cygwin password = "^5%";
+#
+#(sub|SVM=svn) 
+#   (checkout|
+#	diff|
+#	commit|
+#	update|
+#	remove|
+#	checkout bug=co -b|
+#	log=log_grep|
+#	start bug=start_bug|
+#	status) = "$1 $2 ";
 
 start environment 1..5 = "source \$ENV$1/bin/activate{enter}";
 stop environment = "deactivate{enter}"; 
@@ -77,24 +110,6 @@ Django (shell|
 	run="runserver 127.0.0.1:9090"|
 	dump=dumpdata) = "python mymanage.py $1{enter}";
 
-network stats = "netstat -tunlp{enter}";
-network interfaces = "ip addr";
-make link = "ln -sn ";
-(recursive="-r"|file="") copy = "cp $1 ";
-(recursive="-R"|normal="") grep = "grep $1 ''{left}";
-(read=tf|make=cf|track=xf) archive = "tar $1 ";
-extract tar = "tar xf ";
-read file = "less ";
-tail file = "tail -f ";
-list command history = "history{enter}";
-execute command = "./";
-home root = "~/";
-edit = "vim ";
-as root = "sudo ";
-switch [to] superuser = "sudo su{enter}";
-switch [to] user = "sudo su - ";
-echo command = "echo ";
-keyac shell (superuser="su") = $1;
 fix enter key = stty" "sane{enter};
 
 #common directory locations
@@ -105,6 +120,10 @@ my home [(one=tan|two=tom)] = When($1, "~$1/", "~tan/");
 log root = "/var/log/";
 use a lip [(pie=python)] = "/usr/lib/$1";
 
+##
+## command history
+##
+
 #repeat command [1..999] = When($1, "!$1{enter}", "!!{enter}");
 GotocmdnumMod(cmdnum) := Wait(200) "!$cmdnum"{enter};
 Gotocmdnum4Mod(thousands, hundreds, tens, ones) :=
@@ -113,6 +132,8 @@ Gotocmdnum4Mod(thousands, hundreds, tens, ones) :=
 repeat command 0..9 0..9               = Gotocmdnum4Mod(0, 0, $1, $2);
 repeat command 0..9 0..9 0..9        = Gotocmdnum4Mod(0, $1, $2, $3);
 repeat command 0..9 0..9 0..9 0..9 = Gotocmdnum4Mod($1,$2, $3, $4);
+
+replay 1..9 commands starting 1..9 back = Repeat($1, {up_$2} {enter} Wait(500));
 
 ##
 ## RH specific commands
@@ -135,10 +156,6 @@ service control new = "systemctl ";
 #
 #<desc> := (long = -l | full = -A | recent = -t | recursive = -R | human = -h);
 
-list = "ls -h{enter}";
-list directory = "ls -h ";
-long list = "ls -lah ";
-long list directory = "ls -lah{enter}";
 #<list> [<desc> [<desc> [<desc>]]] directory =
 #ls When($2," $2") When($3," $3") When($4," $4") $1{enter};
 #<list> <desc> directory = ls $2 $1{enter};
@@ -149,9 +166,6 @@ switch directory = "{shift}cd -{enter}";
 back directory = "{shift}cd ..{enter}";
 #shell back directory = "cd " "../" {enter}; 
 (shell=""|go={enter}) back directory [1..9] = When($1, "cd ") When($2, Repeat($2, "../"), "../") $1; 
-make directory = "mkdir ";
-
-show disk space = "df -h .{enter}"; # Empty();
 
 <usage> := (usage="-h" | usage kilobytes="" | usage megabytes="-m");
 
@@ -160,7 +174,7 @@ show disk <usage> = "du $1 -s -- .{enter}";
 
 W get = wget;
 cool = curl;
-said shell = zsh;
+[she] said shell = zsh;
 postgres sequel = postgresql;
 engine X = nginx;
 
@@ -172,13 +186,14 @@ packet [to] dump = "tcpdump ";
 ##
 ## Macros for (s)ftp/ssh:
 ##
+## Note: machines.vch currently not used 12-03-16
 
 # make ssh connection to given machine, user pair:
-secure login [to] <machine> = "ssh -X $1{enter}";
-remote login = "ssh ";
+#secure login [to] <machine> = "ssh -X $1{enter}";
+remote login [(root="root@")] [(cluster="lotus-32vm")] = "ssh $1$2";
 
 
-S F T P <machine> = "sftp $1{enter}";
+#S F T P <machine> = "sftp $1{enter}";
 
 # see local show ... directory above (= lls ...)
 
@@ -193,10 +208,10 @@ local working directory = lpwd{enter};
 ##
 
 # add -p to preserve times, permissions:
-<scp> := ( secure copy = "scp" | secure recursive copy = "scp -r"
-| recursive secure copy = "scp -r"
-| secure clone = "scp -p -r");
-<scp> = $1;
+#<scp> := ( secure copy = "scp " | secure recursive copy = "scp -r "
+#| recursive secure copy = "scp -r "
+#| secure clone = "scp -p -r ");
+#<scp> [(from=""|to="{left_15}") (cluster="root@lotus-32vm")] = "$1$3" $2;
 
 #CopyFrom(scp, origin) := PLACE("$scp " SHELL($origin), " .");
 #CopyTo (scp, target) := PLACE("$scp ", " " SHELL($target));

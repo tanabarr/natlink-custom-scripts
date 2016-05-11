@@ -27,3 +27,7 @@ print = "pp ";
 #(Resume={f9}|stop={ctrl+f2}|restart={shift+f9}) debug = $1;
 #(run to cursor={alt+f9}|evaluate={alt+f8}|show execution={alt+f10}) = $1;
 #Toggle breakpoint = {Ctrl+F8};
+
+# make macro debugging: typing make print-X gives this debugging output
+insert print macro = "print-%: ; @$(error $* is $($*) ($(value $*)) (from $(origin $*)))";
+

@@ -1,0 +1,14 @@
+# keyboard mappings for "service" RH linix built in
+# service_control.vch
+
+<service_names> := (
+  corrie=corosync|
+  pacemaker|
+  PCS=pcs|
+  IP tables=iptables|
+  agent=chroma-agent|
+  firewall de=firewalld
+);
+
+<service_names> (stop|start|status|reload|restart) = "service $1 $2" {enter};
+

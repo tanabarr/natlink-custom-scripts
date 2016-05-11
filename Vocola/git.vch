@@ -5,17 +5,22 @@
 <subcmds> := (log|fetch|pull|clone|config|help|
               checkout="checkout "|checkout move="checkout -B "|checkout new="checkout -b "|
               branch="branch "|branch remove="branch -D "|branch show="branch{enter}"|
-              status|status tract="status -uno"|
-              add|add updated="add -u "|
+              status|status show="status -uno{enter}"|
+              add|add updated="add -u "|add patch="add --patch{enter}"| 
+              add interactive="add --interactive{enter}"|
               diff|diff cashed="diff --cached "|
-              rebase="rebase -i master"|rebase continue="rebase --continue"|
+              rebase="rebase -i "|rebase continue="rebase --continue"|
+              rebase master="rebase -i master"|rebase develop="rebase -i develop"|
               checkout master="checkout master"|checkout branch="checkout -b "|
               commit="commit -s"|commit amend="commit --amend -s"|
               commit modified="commit -a "|commit message="commit -m "|
+              commit patch="commit --patch{enter}"| 
+              commit interactive="commit --interactive{enter}"|
               ref log=reflog|cherry="cherry-pick "|
               hard reset="reset --hard "|reset head="reset HEAD"|
+              soft reset="reset --soft"|
               hard reset head="reset --hard HEAD"|
               stash|stash list|stash show|stash pop|
-              submodule init|submodule update);
+              submodule init|submodule update="submodule update{enter}");
 versioning <subcmds> = "git "$1;
 

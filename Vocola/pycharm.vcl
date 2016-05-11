@@ -91,6 +91,7 @@ complete = {ctrl+" "};
 Show error description = {Ctrl+F1};
 
 (expand="A"|collapse="C") all = {ctrl+shift+","} $1; #}>(all="shift+"|line) = {ctrl+$2$1};
+(expand="+"|collapse="-") line = {ctrl+$1}; #}>(all="shift+"|line) = {ctrl+$2$1};
 #(expand="="|collapse="-") line = {ctrl+shift+$1} Wait(100) "a"; #}>(all="shift+"|line) = {ctrl+$2$1};
 expand to level 1..4 = {ctrl+shift+*} $1;
 comment [this] line = Wait(200) {ctrl+"/"};

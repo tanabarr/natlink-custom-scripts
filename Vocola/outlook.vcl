@@ -8,6 +8,7 @@
 #Move To <folder> = {Ctrl+x} switchToFolder($1) {Ctrl+v};
 
 Mark [as] junk = {alt+h} Wait(100) "j" Wait(100) "b";
+keep this = {alt+h} Wait(100) "mv" Wait(100) {enter};
 
 # just collapse subfolders of current account, navigate to given subfolder
 (work=1|personal=5) inbox = {Ctrl+y} Wait(100) Repeat(6, {Left}{left}{up} Wait(100)) {Down_$1} {Right}{Down}{Right}{enter};

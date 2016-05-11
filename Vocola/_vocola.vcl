@@ -35,7 +35,7 @@ okay alert = {tab}{enter};
 ### Extension command mappings for Vocola
 
 # use extension keyhold (Keys)
-(hold|release) (shift|control=ctrl|tab|alt) button = Keys.SendInput({$2_$1});
+(hold|release) (shift|control=ctrl|tab|alternate=alt) button = Keys.SendInput({$2_$1});
 # environment variable extension
 type environment variable (home=HOME|path=PATH|unknown) = Env.Get($1,"UNKNOWN");
 # insert date extension
@@ -308,17 +308,23 @@ python interpreter = "python ";
 root user = "root";
 default prefix = "192.168.";
 (BEGIN|END) separator = "----$1----{enter}";
+firefox advanced settings = "about:preferences#advanced";
 
 # Intel specific text shortcuts
 
 Intel (proxy=proxy-chain.intel.com|proxy Web port=911|proxy port=1080) = $1;
 Intel pay portal ID = TNabarro@IntelUK;
-Jenkins address = https://jenkins.iml.intel.com:8080;
+
+Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com:8080";
+get it address = "http://review.whamcloud.com/#/c/";
+jira address = "https://jira.hpdd.intel.com/browse/HYD-";
+
 chrome checkout = ssh://chris@review.whamcloud.com:29418/chroma;
-import Pie dev = "import pydevd;pydevd.settrace('localhost', port=2100, stdoutToServer=True, stderrToServer=True)";
+insert Pie develop = "import pydevd;pydevd.settrace('localhost', port=2100, stdoutToServer=True, stderrToServer=True)";
 chrome password = "lustre";
 cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
 Windows host name = "tanabarr-mobl.ger.corp.intel.com";
 windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
 said file system = "zfs";
+get it fetch = "git fetch ssh://tanabarr@review.whamcloud.com:29418/chroma refs/changes/44/19344/10 && git checkout FETCH_HEAD";

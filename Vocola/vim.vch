@@ -261,8 +261,8 @@ Vim Window make thin       = {esc}":" Wait(200) "vertical resize -15"{enter};
 
 # buffer navigation
 <buffer_action> := (back=bp|close=bd|next=bn|switch="b#"|list=buffers);
-vim buffer <buffer_action>       =  {Esc}":" Wait(200) "$1"{Enter};
-vim buffer number <1to30>        =  {Esc}":" Wait(200) "b$1"{enter};
+via buffer <buffer_action>       =  {Esc}":" Wait(200) "$1"{Enter};
+via buffer number <1to30>        =  {Esc}":" Wait(200) "b$1"{enter};
 #Close buffer                     =  {Esc}":" Wait(200) "bd"{Enter};
 #Next buffer                      =  {Esc}":" Wait(200) "bn"{Enter};
 #Switch buffer                    =  {Esc}":" Wait(200) "b#"{Enter};
