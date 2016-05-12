@@ -58,15 +58,15 @@ copy links = yf;
  filesystem create="configure/filesystem/create") page = {alt+d} Wait(0)
     "https://127.0.0.1:8000/ui/$1" {enter}; 
 
-# jenkins login
+# jenkins
 login to Jenkins = {ctrl+t} Wait(200) {alt+d}
     "https://jenkins.lotus.hpdd.lab.intel.com:8080/login?from=/" Wait(200) {enter}
     Wait(14000) "tanabarr" {tab} Wait(200) "Chanch0306!" Wait(200) {enter};
 #    "https://jenkins.lotus.hpdd.lab.intel.com:8080" Wait(200) {enter}
 #    Wait(900) "g" Wait(200) "w"; #
 Jenkins login = "f" Wait(200) "w" Wait(5000) "tanabarr" {tab} Wait(200) "Chanch0306!" Wait(200) {enter};
+view full console = {alt+d} Wait(200) {right} "/consoleFull" {enter};
 
 # gerrit login
 login to get it = {tab} Wait(200) "f" Wait(200) "j";
 
-view full console = {alt+d} Wait(200) {right} "/consoleFull" {enter};
