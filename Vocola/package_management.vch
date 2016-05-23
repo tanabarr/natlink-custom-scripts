@@ -33,14 +33,14 @@ pip option (bash|upgrade|outdated|local|no index="no-index"|find links="find-lin
 ##
 ## Macros for yum:
 ##
-yum (provides|
-	install|
-	search|
-	update|
-    remove|
-	clean|
-	clean all="clean all"|
-    local install="localinstall") = "yum $1 ";
-yum list (available|installed|extras|updates|obsoletes|all|recent) = "yum list $1 ";
-yum (enable=en|disable=dis) repo = "--$1ablerepo=*";
+yummy (provides|
+       install|
+    	search|
+     	update|
+        remove|
+      	clean|
+      	clean all="clean all"|
+        local install="localinstall") = "yum $1 ";
+yummy list (available|installed|extras|updates|obsoletes|all|recent) = "yum list $1 ";
+yummy (enable=en|disable=dis) = "--$1ablerepo=*";
 
