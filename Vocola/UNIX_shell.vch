@@ -232,3 +232,9 @@ public key (15|11|12) [(init|tool)] = "pkcs$1-$2";
 ##
 
 skip on = {ctrl+f};
+
+##
+## macros for zfs
+##
+
+pool = "zpool ";
