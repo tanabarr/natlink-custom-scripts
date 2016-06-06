@@ -238,4 +238,6 @@ skip on = {ctrl+f};
 ##
 
 pool = "zpool ";
-(pool="zpool"|she said="zfs") (list|create|import|export) [(go={enter})] = "$1 $2 $3";
+(pool="zpool"|she said="zfs") 
+  (history|status|list|destroy|create|import|export) 
+  [(go={enter})] = "$1 $2 $3";
