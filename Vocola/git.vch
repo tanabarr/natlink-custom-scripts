@@ -11,6 +11,7 @@
               diff|diff cashed="diff --cached "|
               rebase="rebase -i "|rebase continue="rebase --continue"|
               rebase master="rebase -i master"|rebase develop="rebase -i develop"|
+              rebase managed="rebase -i managed-zfs"|
               checkout master="checkout master"|checkout branch="checkout -b "|
               commit="commit -s"|commit amend="commit --amend -s"|
               commit modified="commit -a "|commit message="commit -m "|
