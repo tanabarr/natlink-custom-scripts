@@ -119,7 +119,7 @@ system config = "/etc/sysconfig";
 my home [(one=tan|two=tom)] = When($1, "~$1/", "~tan/");
 log root = "/var/log/";
 use a lip [(pie=python)] = "/usr/lib/$1";
-(manager|dependencies|bundles|agent|similar) = "chroma-$1/";
+(manager|dependencies|common|bundles|agent|external=externals|simulator=sim) = "chroma-$1/";
 
 ##
 ## command history
