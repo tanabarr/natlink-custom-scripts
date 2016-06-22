@@ -102,6 +102,7 @@ close shell = "exit{enter}";
 start environment 1..5 = "source \$ENV$1/bin/activate{enter}";
 stop environment = "deactivate{enter}"; 
 export (test|development=dev) settings = "export DJANGO_SETTINGS_MODULE=settings";
+get it fetch = "git fetch ssh://tanabarr@review.whamcloud.com:29418/chroma refs/changes/44/19344/10 && git checkout FETCH_HEAD";
 
 Django (shell|
 	database shell=dbshell|

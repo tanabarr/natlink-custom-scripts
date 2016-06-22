@@ -312,19 +312,22 @@ firefox advanced settings = "about:preferences#advanced";
 
 # Intel specific text shortcuts
 
-Intel (proxy=proxy-chain.intel.com|proxy Web port=911|proxy port=1080) = $1;
+Intel (proxy=proxy-chain.intel.com|
+	proxy Web port=911|
+    host=tanabarr-MOBL1.ger.corp.intel.com|
+	proxy port=1080) = $1;
 Intel pay portal ID = TNabarro@IntelUK;
 
 Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com:8080";
 get it address = "http://review.whamcloud.com/#/c/";
 jira address = "https://jira.hpdd.intel.com/browse/HYD-";
+# editor custom text
+# this is to enable processes running in supervisor on Guest to connect to
+# remote debugger running on host (pycharm listening on 2100 on host)
+(import|insert) Pie develop = "import pydevd;pydevd.settrace('tanabarr-MOBL1.ger.corp.intel.com', port=2100, stdoutToServer=True, stderrToServer=True)";
 
-chrome checkout = ssh://chris@review.whamcloud.com:29418/chroma;
-insert Pie develop = "import pydevd;pydevd.settrace('localhost', port=2100, stdoutToServer=True, stderrToServer=True)";
 chrome password = "lustre";
 cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
-Windows host name = "tanabarr-mobl.ger.corp.intel.com";
 windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
 [(upper)] she said = When($1, "ZFS", "zfs");
-get it fetch = "git fetch ssh://tanabarr@review.whamcloud.com:29418/chroma refs/changes/44/19344/10 && git checkout FETCH_HEAD";
