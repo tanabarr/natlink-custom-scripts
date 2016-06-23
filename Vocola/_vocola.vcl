@@ -315,6 +315,7 @@ firefox advanced settings = "about:preferences#advanced";
 Intel (proxy=proxy-chain.intel.com|
 	proxy Web port=911|
     host=tanabarr-MOBL1.ger.corp.intel.com|
+    manager=imldev.local|
 	proxy port=1080) = $1;
 Intel pay portal ID = TNabarro@IntelUK;
 
@@ -324,7 +325,9 @@ jira address = "https://jira.hpdd.intel.com/browse/HYD-";
 # editor custom text
 # this is to enable processes running in supervisor on Guest to connect to
 # remote debugger running on host (pycharm listening on 2100 on host)
-(import|insert) Pie develop = "import pydevd;pydevd.settrace('tanabarr-MOBL1.ger.corp.intel.com', port=2100, stdoutToServer=True, stderrToServer=True)";
+# Gateway putty session, first VM putty session and VirtualBox port forwarding
+# rules allow this to work
+(import|insert) Pie develop = "import pydevd;pydevd.settrace('imldev.local', port=2100, stdoutToServer=True, stderrToServer=True)";
 
 chrome password = "lustre";
 cluster = "lotus-32vm";
