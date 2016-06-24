@@ -328,6 +328,8 @@ jira address = "https://jira.hpdd.intel.com/browse/HYD-";
 # Gateway putty session, first VM putty session and VirtualBox port forwarding
 # rules allow this to work
 (import|insert) Pie develop = "import pydevd;pydevd.settrace('imldev.local', port=2100, stdoutToServer=True, stderrToServer=True)";
+# local debug on calling commandline
+import debug = "import ipdb;ipdb.set_trace()";
 
 chrome password = "lustre";
 cluster = "lotus-32vm";

@@ -18,7 +18,6 @@
 
 (breakpoint=b|clear) [1..9] = $1 When($2, " $2") {enter};
 execute expression = "!";
-import debug = "import ipdb;ipdb.set_trace()";
 print = "pp ";
 (locals|globals)= "pp $1()"{enter};
 
