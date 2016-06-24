@@ -40,7 +40,8 @@ go to (
     type declaration = {Ctrl+Shift+b}|
     usages = {Ctrl+Alt+F7}|
     action={ctrl+shift+a}|
-    find results = {alt+3}
+    find results = {alt+3}|
+    debug = {alt+5}
 ) = {esc} $1;
 previous jump = {ctrl+shift+"="};
 symbol preview = {ctrl+y};
@@ -115,7 +116,10 @@ Select configuration and debug = {Alt+Shift+F9};
 Run context configuration from editor = {Ctrl+Shift+F10};
 (Resume={f9}|stop={ctrl+f2}|restart={shift+f9}) debug = $1;
 (run to cursor={alt+f9}|evaluate={alt+f8}|show execution={alt+f10}) = $1;
-(step out={shift+f8}|Step over={F8}|step into={F7}) [1..20] [times] = When($2, Repeat($2, Wait(200) $1), $1);
+step out = {shift+f8};
+step over = {f8};
+step into = {f7};
+#(step out={shift+f8}|step over={F8}|step into={F7}) [1..20] [times] = When($2, Repeat($2, Wait(200) $1), $1);
 Toggle breakpoint = {Ctrl+F8};
 Quick evaluate expression = {Ctrl+Alt+F8};
 View breakpoints = {Ctrl+Shift+F8};

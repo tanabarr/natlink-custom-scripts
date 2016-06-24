@@ -242,3 +242,16 @@ pool = "zpool ";
 (pool="zpool"|she said="zfs") 
   (history|status|list|destroy|create|import|export) 
   [(go={enter})] = "$1 $2 $3";
+
+##
+## macros for pacemaker
+##
+
+pace (
+    monitor="mon -1{enter}"|
+    resource="resource{enter}"|
+    resource resource="resource --resource "
+) = "crm_$1";
+    
+probe = "modprobe ";
+check return = "echo $?{enter}";
