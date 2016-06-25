@@ -53,6 +53,7 @@ copy links = yf;
  server two="configure/server/2"|
  command="status"|
  volume="configure/volume"|
+ management="configure/mgt"|
  filesystem="configure/filesystem"|
  filesystem one="configure/filesystem/detail/1"|
  filesystem create="configure/filesystem/create") page = {alt+d} Wait(0)
