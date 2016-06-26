@@ -249,7 +249,7 @@ pool = "zpool ";
 
 pace (
     monitor="mon -1{enter}"|
-    resource="resource{enter}"|
+    resource="resource "|
     resource resource="resource --resource "
 ) = "crm_$1";
     
