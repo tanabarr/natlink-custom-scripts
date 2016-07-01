@@ -255,3 +255,10 @@ pace (
     
 probe = "modprobe ";
 check return = "echo $?{enter}";
+
+##
+## macros for accessing the manager API
+##
+
+remove target = "http -v PUT https://localhost:8000/api/target/16/ state=removed --verify=no --session=iml";
+list volumes = "http -v GET https://localhost:8000/api/volume/ --verify=no --session=iml";
