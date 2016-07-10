@@ -238,10 +238,10 @@ skip on = {ctrl+f};
 ## macros for zfs
 ##
 
-pool = "zpool ";
 (pool="zpool"|she said="zfs") 
-  (history|status|list|destroy|create|import|export) 
+  (history|status|list=list{enter}|destroy|create)
   [(go={enter})] = "$1 $2 $3";
+pool [(import|export)] [(go={enter})] = "zpool $1 $2";
 
 ##
 ## macros for pacemaker
