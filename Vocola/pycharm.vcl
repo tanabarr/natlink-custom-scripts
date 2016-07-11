@@ -147,7 +147,6 @@ Extract (Method=M|Variable=V|Field=F|Constant=C|Parameter=P) = {Ctrl+Alt+$1};
 Add to Favorites = {Alt+Shift+f};
 Quick switch current scheme = {Ctrl+"`"};
 add item = {alt+insert};
-search everywhere = {shift}{shift};
 clean compile files = {ctrl+shift+"#"};
 #Charm Tab (back=Left|next=Right) = {Ctrl+Alt+$1};
 
@@ -169,6 +168,8 @@ Toggle case for word at caret or selected block = {Ctrl+Shift+u};
 
 ### Search/Replace ###
 find [(this="ctrl+"|next=|back="shift+")] = When($1,{$1f3},{alt+f3});
+find (anywhere|everywhere) = {shift}{shift};
+find this (anywhere|everywhere) = {ctrl+alt+f7};
 select (next="alt+"|all="ctrl+alt+"|unselect="shift+alt+") = {$1j};
 
 ### VCS/Local History
