@@ -18,9 +18,9 @@
               commit patch="commit --patch{enter}"| 
               commit interactive="commit --interactive{enter}"|
               ref log=reflog|cherry="cherry-pick "|
-              hard reset="reset --hard "|reset head="reset HEAD"|
-              soft reset="reset --soft"|
-              hard reset head="reset --hard HEAD"|
+              reset hard="reset --hard "|reset head="reset HEAD"|
+              reset soft="reset --soft"|
+              reset hard head="reset --hard HEAD"|
               stash|stash list|stash show|stash pop|
               submodule init|submodule update="submodule update{enter}");
 versioning <subcmds> = "git "$1;
