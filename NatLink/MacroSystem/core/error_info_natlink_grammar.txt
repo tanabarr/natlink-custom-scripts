@@ -3,9 +3,9 @@ Info about scanner/parser error of NatLink grammar
 Traceback (most recent call last):
   File "C:\NatLink\NatLink\MacroSystem\core\natlinkmain.py", line 340, in loadFile
     imp.load_module(modName,fndFile,fndName,fndDesc)
-  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 8506, in <module>
+  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 8591, in <module>
     thisGrammar.initialize()
-  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 377, in initialize
+  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 380, in initialize
     self.load(self.gramSpec)
   File "C:\NatLink\NatLink\MacroSystem\core\natlinkutils.py", line 438, in load
     parser.checkForErrors()
@@ -262,7 +262,7 @@ The complete grammar:
 <159> = 'screen join' ;
 <160> = 'screen search' ('backward' | 'forward' ) ;
 <161> = 'screen search next' ('backward' | 'forward' ) ;
-<subcmds> = ('log' | 'fetch' | 'pull' | 'clone' | 'config' | 'help' | 'checkout' | 'checkout move' | 'checkout new' | 'branch' | 'branch remove' | 'branch show' | 'status' | 'status show' | 'add' | 'add updated' | 'add patch' | 'add interactive' | 'diff' | 'diff cashed' | 'rebase' | 'rebase continue' | 'rebase master' | 'rebase develop' | 'rebase managed' | 'checkout master' | 'checkout branch' | 'commit' | 'commit amend' | 'commit modified' | 'commit message' | 'commit patch' | 'commit interactive' | 'ref log' | 'cherry' | 'hard reset' | 'reset head' | 'soft reset' | 'hard reset head' | 'stash' | 'stash list' | 'stash show' | 'stash pop' | 'submodule init' | 'submodule update' ) ;
+<subcmds> = ('log' | 'fetch' | 'pull' | 'clone' | 'config' | 'help' | 'checkout' | 'checkout move' | 'checkout new' | 'checkout reset' | 'branch' | 'branch remove' | 'branch show' | 'status' | 'status show' | 'add' | 'add updated' | 'add patch' | 'add interactive' | 'diff' | 'diff cashed' | 'rebase' | 'rebase continue' | 'rebase master' | 'rebase develop' | 'rebase managed' | 'checkout master' | 'checkout branch' | 'commit' | 'commit amend' | 'commit modified' | 'commit message' | 'commit patch' | 'commit interactive' | 'ref log' | 'cherry' | 'reset' | 'reset soft' | 'reset hard' | 'reset head' | 'reset hard head' | 'stash' | 'stash list' | 'stash show' | 'stash pop' | 'submodule init' | 'submodule update' ) ;
 <162> = 'versioning' <subcmds> ;
 <subcmds_sysctl> = ('start' | 'stop' | 'enable' | 'disable' | 'help' | 'status' | 'dependencies' | 'units' ) ;
 <163> = 'system control' <subcmds_sysctl> ;
@@ -357,9 +357,12 @@ The complete grammar:
 <235> = 'public key' ('15' | '11' | '12' ) ('init' | 'tool' ) ;
 <318> = 'public key' ('15' | '11' | '12' ) ;
 <236> = 'skip on' ;
-<237> = 'pool' ;
-<238> = ('pool' | 'she said' ) ('history' | 'status' | 'list' | 'destroy' | 'create' | 'import' | 'export' ) ('go' ) ;
-<319> = ('pool' | 'she said' ) ('history' | 'status' | 'list' | 'destroy' | 'create' | 'import' | 'export' ) ;
+<237> = ('pool' | 'she said' ) ('history' | 'status' | 'list' | 'destroy' | 'create' ) ('go' ) ;
+<319> = ('pool' | 'she said' ) ('history' | 'status' | 'list' | 'destroy' | 'create' ) ;
+<238> = 'pool' ('import' | 'export' ) ('go' ) ;
+<321> = 'pool' ('import' | 'export' ) ;
+<320> = 'pool' ('go' ) ;
+<322> = 'pool' ;
 <239> = 'pace' ('monitor' | 'resource' | 'resource resource' ) ;
 <240> = 'probe' ;
 <241> = 'check return' ;
@@ -372,10 +375,10 @@ The complete grammar:
 <248> = ('start' | 'show' | 'open' ) 'VM' ;
 <249> = 'start headless' ;
 <250> = 'select a VM' ;
-<320> = 'select VM' ;
+<323> = 'select VM' ;
 <251> = 'VM dialogue' ('settings' | 'shutdown' ) ;
 <252> = 'new snapshot' ;
 <253> = 'ubuntu' ('minimise' | 'maximise' ) ;
-<any> = <1>|<2>|<3>|<254>|<4>|<255>|<5>|<256>|<6>|<7>|<257>|<8>|<258>|<9>|<259>|<10>|<261>|<260>|<262>|<11>|<263>|<12>|<264>|<13>|<14>|<15>|<16>|<17>|<18>|<19>|<20>|<265>|<21>|<22>|<23>|<267>|<266>|<268>|<24>|<269>|<25>|<271>|<270>|<272>|<26>|<27>|<28>|<29>|<30>|<31>|<32>|<33>|<273>|<34>|<35>|<274>|<36>|<37>|<275>|<38>|<39>|<40>|<276>|<41>|<42>|<280>|<43>|<281>|<44>|<282>|<45>|<283>|<46>|<47>|<287>|<48>|<49>|<288>|<50>|<289>|<51>|<290>|<52>|<291>|<53>|<292>|<54>|<293>|<55>|<56>|<295>|<294>|<57>|<58>|<59>|<60>|<61>|<62>|<63>|<64>|<65>|<66>|<296>|<67>|<297>|<68>|<69>|<70>|<71>|<72>|<73>|<74>|<75>|<76>|<77>|<78>|<79>|<80>|<81>|<82>|<83>|<298>|<84>|<85>|<86>|<87>|<299>|<88>|<89>|<90>|<91>|<92>|<93>|<94>|<95>|<96>|<97>|<98>|<99>|<100>|<101>|<102>|<103>|<104>|<105>|<106>|<107>|<108>|<109>|<110>|<111>|<112>|<113>|<114>|<115>|<116>|<117>|<118>|<119>|<120>|<121>|<122>|<123>|<124>|<125>|<126>|<127>|<300>|<128>|<301>|<129>|<302>|<130>|<303>|<131>|<132>|<133>|<134>|<135>|<136>|<137>|<304>|<138>|<139>|<140>|<141>|<142>|<143>|<144>|<145>|<146>|<147>|<148>|<149>|<150>|<151>|<152>|<153>|<154>|<155>|<156>|<157>|<158>|<159>|<160>|<161>|<162>|<163>|<164>|<165>|<305>|<166>|<167>|<168>|<169>|<307>|<306>|<308>|<170>|<171>|<172>|<173>|<174>|<175>|<176>|<177>|<178>|<179>|<309>|<180>|<310>|<181>|<182>|<183>|<184>|<185>|<186>|<187>|<188>|<189>|<190>|<191>|<192>|<193>|<194>|<195>|<196>|<197>|<198>|<199>|<200>|<201>|<202>|<203>|<204>|<205>|<206>|<207>|<208>|<209>|<311>|<210>|<211>|<312>|<212>|<213>|<214>|<215>|<216>|<217>|<218>|<219>|<220>|<221>|<222>|<223>|<224>|<313>|<225>|<226>|<227>|<228>|<229>|<230>|<314>|<231>|<316>|<315>|<317>|<232>|<233>|<234>|<235>|<318>|<236>|<237>|<238>|<319>|<239>|<240>|<241>|<242>|<243>|<244>|<245>|<246>|<247>|<248>|<249>|<250>|<320>|<251>|<252>|<253>;
+<any> = <1>|<2>|<3>|<254>|<4>|<255>|<5>|<256>|<6>|<7>|<257>|<8>|<258>|<9>|<259>|<10>|<261>|<260>|<262>|<11>|<263>|<12>|<264>|<13>|<14>|<15>|<16>|<17>|<18>|<19>|<20>|<265>|<21>|<22>|<23>|<267>|<266>|<268>|<24>|<269>|<25>|<271>|<270>|<272>|<26>|<27>|<28>|<29>|<30>|<31>|<32>|<33>|<273>|<34>|<35>|<274>|<36>|<37>|<275>|<38>|<39>|<40>|<276>|<41>|<42>|<280>|<43>|<281>|<44>|<282>|<45>|<283>|<46>|<47>|<287>|<48>|<49>|<288>|<50>|<289>|<51>|<290>|<52>|<291>|<53>|<292>|<54>|<293>|<55>|<56>|<295>|<294>|<57>|<58>|<59>|<60>|<61>|<62>|<63>|<64>|<65>|<66>|<296>|<67>|<297>|<68>|<69>|<70>|<71>|<72>|<73>|<74>|<75>|<76>|<77>|<78>|<79>|<80>|<81>|<82>|<83>|<298>|<84>|<85>|<86>|<87>|<299>|<88>|<89>|<90>|<91>|<92>|<93>|<94>|<95>|<96>|<97>|<98>|<99>|<100>|<101>|<102>|<103>|<104>|<105>|<106>|<107>|<108>|<109>|<110>|<111>|<112>|<113>|<114>|<115>|<116>|<117>|<118>|<119>|<120>|<121>|<122>|<123>|<124>|<125>|<126>|<127>|<300>|<128>|<301>|<129>|<302>|<130>|<303>|<131>|<132>|<133>|<134>|<135>|<136>|<137>|<304>|<138>|<139>|<140>|<141>|<142>|<143>|<144>|<145>|<146>|<147>|<148>|<149>|<150>|<151>|<152>|<153>|<154>|<155>|<156>|<157>|<158>|<159>|<160>|<161>|<162>|<163>|<164>|<165>|<305>|<166>|<167>|<168>|<169>|<307>|<306>|<308>|<170>|<171>|<172>|<173>|<174>|<175>|<176>|<177>|<178>|<179>|<309>|<180>|<310>|<181>|<182>|<183>|<184>|<185>|<186>|<187>|<188>|<189>|<190>|<191>|<192>|<193>|<194>|<195>|<196>|<197>|<198>|<199>|<200>|<201>|<202>|<203>|<204>|<205>|<206>|<207>|<208>|<209>|<311>|<210>|<211>|<312>|<212>|<213>|<214>|<215>|<216>|<217>|<218>|<219>|<220>|<221>|<222>|<223>|<224>|<313>|<225>|<226>|<227>|<228>|<229>|<230>|<314>|<231>|<316>|<315>|<317>|<232>|<233>|<234>|<235>|<318>|<236>|<237>|<319>|<238>|<321>|<320>|<322>|<239>|<240>|<241>|<242>|<243>|<244>|<245>|<246>|<247>|<248>|<249>|<250>|<323>|<251>|<252>|<253>;
 <sequence> exported = <any>;
  
