@@ -43,7 +43,8 @@ go to (
     find results = {alt+3}|
     debug = {alt+5}
 ) = {esc} $1;
-previous jump = {ctrl+shift+"="};
+jump back = {ctrl+shift+"="};
+jump forward = {ctrl+alt+right};
 symbol preview = {ctrl+y};
 
 version control popup = {Alt+`} Wait(200) {esc};
