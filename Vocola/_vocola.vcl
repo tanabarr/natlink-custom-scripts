@@ -203,7 +203,7 @@ $set numbers 0;
 ## icon navigation commands Win 8
 
 quickStartBar()   := Keys.SendInput({win+b});
-quick start bar = quickStartBar();
+(quick start bar|notification tray) = quickStartBar();
 
 # open context menu for quick start icon given a row and column index (one based), weird quirk is that first column takes extra press to get the next row.
 <lr> := (left={space}|right={shift+f10});
@@ -336,3 +336,4 @@ cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
 windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
 [(upper)] she said = When($1, "ZFS", "zfs");
+dongle number = "0607659202";
