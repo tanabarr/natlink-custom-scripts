@@ -18,6 +18,7 @@
               commit modified="commit -a "|commit message="commit -m "|
               commit patch="commit --patch{enter}"| 
               commit interactive="commit --interactive{enter}"|
+              commit previous message="commit -C "|
               ref log=reflog|cherry="cherry-pick "|
               reset|reset soft="reset --soft"|
               reset hard="reset --hard "|reset head="reset HEAD"|
