@@ -120,8 +120,14 @@ Run context configuration from editor = {Ctrl+Shift+F10};
 #charm out = {shift+f8};
 #charm over = {f8};
 #charm into = {f7};
-(charm out={shift+f8}|charm over={F8}|charm into={F7}) [1..20] [times] = 
-    When($2, Repeat($2, Wait(200) $1), $1);
+charm (
+    till={alt+f9}|
+	out={shift+f8}|
+	over={F8}|
+	into={F7}
+    resume={f9}
+) [1..20] [times] = When($2, Repeat($2, Wait(200) $1), $1);
+
 Toggle breakpoint = {Ctrl+F8};
 Quick evaluate expression = {Ctrl+Alt+F8};
 View breakpoints = {Ctrl+Shift+F8};
