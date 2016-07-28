@@ -124,7 +124,7 @@ charm (
     till={alt+f9}|
 	out={shift+f8}|
 	over={F8}|
-	into={F7}
+	into={F7}|
     resume={f9}
 ) [1..20] [times] = When($2, Repeat($2, Wait(200) $1), $1);
 

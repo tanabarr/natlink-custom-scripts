@@ -3,7 +3,7 @@ Info about scanner/parser error of NatLink grammar
 Traceback (most recent call last):
   File "C:\NatLink\NatLink\MacroSystem\core\natlinkmain.py", line 340, in loadFile
     imp.load_module(modName,fndFile,fndName,fndDesc)
-  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 8591, in <module>
+  File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 8593, in <module>
     thisGrammar.initialize()
   File "C:\NatLink\NatLink\MacroSystem\virtualbox_vcl.py", line 380, in initialize
     self.load(self.gramSpec)
@@ -262,7 +262,7 @@ The complete grammar:
 <159> = 'screen join' ;
 <160> = 'screen search' ('backward' | 'forward' ) ;
 <161> = 'screen search next' ('backward' | 'forward' ) ;
-<subcmds> = ('log' | 'fetch' | 'pull' | 'clone' | 'config' | 'help' | 'checkout' | 'checkout move' | 'checkout new' | 'checkout reset' | 'branch' | 'branch remove' | 'branch show' | 'status' | 'status show' | 'add' | 'add updated' | 'add patch' | 'add interactive' | 'diff' | 'diff cashed' | 'rebase' | 'rebase continue' | 'rebase master' | 'rebase develop' | 'rebase managed' | 'checkout master' | 'checkout branch' | 'commit' | 'commit amend' | 'commit modified' | 'commit message' | 'commit patch' | 'commit interactive' | 'ref log' | 'cherry' | 'reset' | 'reset soft' | 'reset hard' | 'reset head' | 'reset hard head' | 'stash' | 'stash list' | 'stash show' | 'stash pop' | 'submodule init' | 'submodule update' ) ;
+<subcmds> = ('log' | 'fetch' | 'pull' | 'clone' | 'config' | 'help' | 'checkout' | 'checkout move' | 'checkout new' | 'checkout reset' | 'branch' | 'branch remove' | 'branch show' | 'status' | 'status show' | 'add' | 'add updated' | 'add patch' | 'add interactive' | 'diff' | 'diff cashed' | 'rebase' | 'rebase continue' | 'rebase master' | 'rebase develop' | 'rebase managed' | 'checkout master' | 'checkout branch' | 'commit' | 'commit amend' | 'commit modified' | 'commit message' | 'commit patch' | 'commit interactive' | 'commit previous message' | 'ref log' | 'cherry' | 'reset' | 'reset soft' | 'reset hard' | 'reset head' | 'reset hard head' | 'stash' | 'stash list' | 'stash show' | 'stash pop' | 'submodule init' | 'submodule update' ) ;
 <162> = 'versioning' <subcmds> ;
 <subcmds_sysctl> = ('start' | 'stop' | 'enable' | 'disable' | 'help' | 'status' | 'dependencies' | 'units' ) ;
 <163> = 'system control' <subcmds_sysctl> ;
