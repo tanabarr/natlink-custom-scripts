@@ -58,6 +58,7 @@ copy links = yf;
  filesystem one="configure/filesystem/detail/1"|
  filesystem create="configure/filesystem/create") page = {alt+d} Wait(0)
     "https://127.0.0.1:8000/ui/$1" {enter}; 
+format jason = "?format=json";
 
 # jenkins
 login to Jenkins = {ctrl+t} Wait(200) {alt+d}
