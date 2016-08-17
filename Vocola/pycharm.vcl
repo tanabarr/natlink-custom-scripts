@@ -52,6 +52,7 @@ Recent files popup = {Ctrl+shift+e};
 File structure popup = {Ctrl+F12};
 File structure view = {Alt+7};
 (project=1|structure=7) view = {alt+$1};
+hide project view = Repeat(2, {alt+1} Wait(200));
 Show navigation bar = {Alt+Home};
 quick definition lookup = {Ctrl+Shift+i};
 
