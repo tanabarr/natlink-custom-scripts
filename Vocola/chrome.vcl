@@ -60,6 +60,14 @@ copy links = yf;
     "https://127.0.0.1:8000/ui/$1" {enter}; 
 format jason = "?format=json";
 
+(server|
+ volume|
+ alert|
+ command|
+ host|
+ job) api = {alt+d} Wait(0)
+    "https://127.0.0.1:8000/api/$1/?format=json" {enter}; 
+
 # jenkins
 login to Jenkins = {ctrl+t} Wait(200) {alt+d}
     "https://jenkins.lotus.hpdd.lab.intel.com:8080/login?from=/" Wait(200) {enter}
