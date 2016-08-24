@@ -10,10 +10,15 @@ screen paste = {Ctrl+a}"]";
 screen mark = '>';
 screen kill = {Ctrl+a}"k";
 screen help = {Ctrl+a}"?";
-screen split = {Ctrl+a}"S"{ctrl+a}{tab}{ctrl+a}"n";
+screen split [0..9] = 
+    {Ctrl+a}"S"{ctrl+a}{tab}{ctrl+a}"n"
+    When($1, Wait(200) {ctrl+a}{$1});
 screen title = {Ctrl+a}"A";
 screen list = {Ctrl+a}'"';
-screen switch [0..9] = When($1, Repeat($1, {Ctrl+a}{tab} Wait(200)), {ctrl+a}{tab});
+screen switch [0..9] = 
+    When($1, 
+         Repeat($1, {Ctrl+a}{tab} Wait(200)), 
+         {ctrl+a}{tab});
 screen detach = {Ctrl+a}"d";
 screen next = {Ctrl + a} {n};
 screen back = {Ctrl + a} {p};
