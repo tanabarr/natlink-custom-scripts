@@ -56,8 +56,11 @@ copy links = yf;
  management="configure/mgt"|
  filesystem="configure/filesystem"|
  filesystem one="configure/filesystem/detail/1"|
- filesystem create="configure/filesystem/create") page = {alt+d} Wait(0)
-    "https://127.0.0.1:8000/ui/$1" {enter}; 
+ filesystem create="configure/filesystem/create") 
+(local="127.0.0.1:8000"|
+ cluster="10.14.81.222")
+page = {alt+d} Wait(0) "https://$2/ui/$1" {enter};
+
 format jason = "?format=json";
 
 (server|
