@@ -48,7 +48,8 @@ swap focus = o;
 copy links = yf;
 
 # iml website navigation
-(server="configure/server"|
+<iml_urls> := (
+ server="configure/server"|
  server one="configure/server/1"|
  server two="configure/server/2"|
  command="status"|
@@ -56,10 +57,14 @@ copy links = yf;
  management="configure/mgt"|
  filesystem="configure/filesystem"|
  filesystem one="configure/filesystem/detail/1"|
- filesystem create="configure/filesystem/create") 
-(local="127.0.0.1:8000"|
- cluster="10.14.81.222")
-page = {alt+d} Wait(0) "https://$2/ui/$1" {enter};
+ filesystem create="configure/filesystem/create");
+
+<iml_manager_addresses> := (
+ local="127.0.0.1:8000"|
+ cluster="10.14.81.222");
+
+<iml_urls> <iml_manager_addresses> page = {alt+d} Wait(0) "https://$2/ui/$1" {enter};
+<iml_urls> page = {alt+d} Wait(0) "https://127.0.0.1:8000/ui/$1" {enter};
 
 format jason = "?format=json";
 
