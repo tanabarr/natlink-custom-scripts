@@ -29,4 +29,17 @@ screen join = "screen -x {enter}";
 screen search (backward=? | forward=/)= {ctrl+a}"[$1";
 screen search next (backward=? | forward=/)= "$1"{enter};
 
-
+_rename(title) := {ctrl+a}"A" Repeat(3, {backspace}) $title {enter} {ctrl+a}"n";
+screen set up chrome = 
+ #Repeat(9, {ctrl+a}"c") 
+ {ctrl+a}0
+ _rename("manager");
+ _rename("git")
+ _rename("debug")
+ _rename("fab")
+ _rename("vm5")
+ _rename("vm6")
+ _rename("job log")
+ _rename("test")
+ _rename("test log")
+ _rename("debug2");
