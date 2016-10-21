@@ -10,7 +10,7 @@ class ThisGrammar(GrammarBase):
 
     gramSpec = """
         <start> exported =
-        insert (password ( 1 | 2 | 3 | 4 | 5 | 6 ) | email ( 1 | 2 | 3 ) | logon ( 1 | 2 | 3 | 4 | 5 | 6 | 7 ) | address | employee number | mobile phone | home phone | static );
+        insert (password ( 1 | 2 | 3 | 4 | 5 | 6 ) | email ( 1 | 2 | 3 ) | logon ( 1 | 2 | 3 | 4 | 5 | 6 | 7 ) | address | address work | employee number | mobile phone | home phone | static );
     """
 
     def gotResults_start(self,words,fullResults):
@@ -45,6 +45,18 @@ class ThisGrammar(GrammarBase):
             else:
                 natlink.playString('GER\\tanabarr')
         elif words [1] == 'address':
+            if words [2] == 'work':
+                natlink.playString("""
+Tom Nabarro
+Intel Corporation
+Pipers way
+Swindon
+SN3 1RJ
+
++44 7786 260986 is my mobile
++44 1793 403000 is Intel switchboard
+""")
+            else:
                 natlink.playString('The Limes, 87 High St, Standlake, Oxfordshire, ox29 7rh.') 
         elif words [1] == 'employee':
             if words [2] == 'pin':
