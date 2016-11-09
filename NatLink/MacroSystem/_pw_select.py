@@ -16,7 +16,7 @@ class ThisGrammar(GrammarBase):
     def gotResults_start(self,words,fullResults):
         # execute a control-left drag down 30 pixels
         #x,y = natlink.getCursorPos()
-        if words [1] == 'password':
+        if words[1] == 'password':
             if (int(words[2]) == 2):
                 natlink.playString('siemens') 
             elif (int(words[2]) == 3):
@@ -31,7 +31,7 @@ class ThisGrammar(GrammarBase):
                 natlink.playString('chemring1')
             else:
                 natlink.playString('test')
-        elif words [1] == 'logon':
+        elif words[1] == 'logon':
             if (int(words[2]) == 2):
                 natlink.playString('admin') 
             elif (int(words[2]) == 3):
@@ -44,8 +44,8 @@ class ThisGrammar(GrammarBase):
                 natlink.playString('tans.gotdns.com')
             else:
                 natlink.playString('GER\\tanabarr')
-        elif words [1] == 'address':
-            if words [2] == 'work':
+        elif words[1] == 'address':
+            if ((len(words) > 2) and (words[2] == 'work')):
                 natlink.playString("""
 Tom Nabarro
 Intel Corporation
@@ -58,16 +58,16 @@ SN3 1RJ
 """)
             else:
                 natlink.playString('The Limes, 87 High St, Standlake, Oxfordshire, ox29 7rh.') 
-        elif words [1] == 'employee':
-            if words [2] == 'pin':
+        elif words[1] == 'employee':
+            if words[2] == 'pin':
                     natlink.playString('46912944') 
-            elif words [2] == 'number':
+            elif words[2] == 'number':
                     natlink.playString('10695475') 
-        elif words [1] == 'home':
+        elif words[1] == 'home':
                 natlink.playString('01865 300939') 
-        elif words [1] == 'mobile':
+        elif words[1] == 'mobile':
                 natlink.playString('07786260986') 
-        elif words [1] == 'static':
+        elif words[1] == 'static':
                 natlink.playString('46.227.149.232') 
         else:
             if (int(words[2]) == 3):
