@@ -191,7 +191,7 @@ packet [to] dump = "tcpdump ";
 
 # make ssh connection to given machine, user pair:
 #secure login [to] <machine> = "ssh -X $1{enter}";
-remote login [(root="root@")] [(cluster="lotus-32vm")] = "ssh $1$2";
+remote login [(root="root@")] [(cluster="lotus-vm"{left_2}|local cluster="lotus-32vm")] = "ssh $1$2";
 
 
 #S F T P <machine> = "sftp $1{enter}";
