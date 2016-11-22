@@ -73,6 +73,7 @@ format jason = "?format=json";
  alert|
  command|
  host|
+ filesystem|
  job) api = {alt+d} Wait(0)
     "https://127.0.0.1:8000/api/$1/?format=json" {enter}; 
 
