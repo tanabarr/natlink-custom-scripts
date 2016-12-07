@@ -23,7 +23,7 @@
               reset|reset soft="reset --soft"|
               reset hard="reset --hard "|reset head="reset HEAD"|
               reset hard head="reset --hard HEAD"|
-              stash|stash list|stash show|stash pop|
+              stash|stash list|stash show|stash pop|stash apply|
               submodule init|submodule update="submodule update{enter}");
 versioning <subcmds> = "git "$1;
 
