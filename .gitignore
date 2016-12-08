@@ -1,6 +1,6 @@
 *\.dat
 *\.exe
 tmp/*
-*.pyc
+NatLink/MacroSystem/*.pyc
 *_vcl.py
 *.swp
