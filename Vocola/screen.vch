@@ -20,8 +20,9 @@ screen switch [0..9] =
          Repeat($1, {Ctrl+a}{tab} Wait(200)), 
          {ctrl+a}{tab});
 screen detach = {Ctrl+a}"d";
-screen next = {Ctrl + a} {n};
-screen back = {Ctrl + a} {p};
+screen (next=n|back=p) [1..9] = Repeat($2, {Ctrl + a} {$1});
+# convenient aliases
+(previous=p|next=n) [1..9] = Repeat($2, {Ctrl + a} {$1});
 screen 0..9 = {Ctrl + a} {$1};
 #screen detach = {Ctrl + T} {d};
 screen attach = "screen  {Enter}  {enter}";

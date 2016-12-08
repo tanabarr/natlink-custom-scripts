@@ -189,9 +189,12 @@ packet [to] dump = "tcpdump ";
 ##
 ## Note: machines.vch currently not used 12-03-16
 
-# make ssh connection to given machine, user pair:
+# make ssh connection to given cluster, machine pair:
 #secure login [to] <machine> = "ssh -X $1{enter}";
-remote login [(root="root@")] [(cluster="lotus-vm"{left_2}|local cluster="lotus-32vm")] = "ssh $1$2";
+remote login cluster [1..9 [1..9]] machine [2..9] = "ssh root@lotus-$1" When($3, $2) "vm" When($3, $3, $2) {enter}; 
+remote login cluster [1..9 [1..9]] machine one [2..9] = "ssh root@lotus-$1" When($3, $2) "vm1" When($3, $3, $2) {enter}; 
+#When($3, If( Eval('$3 != 1'), $2 ) ) );
+remote login local cluster [2..9] = "ssh root@lotus-32vm$1" {enter};
 
 
 #S F T P <machine> = "sftp $1{enter}";
