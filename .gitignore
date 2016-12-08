@@ -1,6 +1,6 @@
 *\.dat
 *\.exe
 tmp/*
-*\.pyc
-*_vcl\.py
-*\.swp
+*.pyc
+*_vcl.py
+*.swp
