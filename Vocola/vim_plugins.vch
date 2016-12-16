@@ -2,7 +2,13 @@
 # vim_plugins.vch
 
 # plug-in actions
-Vim show Taglist                     =  {Esc}""{ctrl+g};
+(toggle|open|show) tree              =  {Esc}""{ctrl+g};
+tree                                 =  {Esc}""{f2};
+#vim cargo build     =  {Esc}":" Wait(200) "CargoBuild"{enter};
+#vim cargo run       =  {Esc}":" Wait(200) "CargoRun"{enter};
+#vim cargo test      =  {Esc}":" Wait(200) "CargoTest"{enter};
+#Vim show Taglist                     =  {Esc}""{ctrl+g};
+run cargo  = {esc}":!" Wait(200) "cargo test{enter}";
 Vim Align                            =  {Esc}":" Wait(200) "Align ";
 Vim Align <key>                      =  {Esc}":" Wait(200) "Align $1"{Left_7};
 ## omnicomplete

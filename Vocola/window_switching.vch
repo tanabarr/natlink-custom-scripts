@@ -15,7 +15,8 @@ launch bar = launchBar();
 # reset focus to the messages from Natlink window, seems to fix issues where
 # handle is not recognised, it is nonetheless a hack!
 focusNatlink() := launchBar() {enter} {alt+space} Wait(50) n;
-minWindow() := Wait(100) {alt+space} Wait(100) n Wait(100);
+minWindow() := Wait(200) {alt+space} Wait(200) n Wait(200);
+retryGo(appfile) := Variable.Set(:old, Window.ID()) Window.Go(app>"$appfile") Wait(200) If( Eval( Variable.Get() == Variable.Get(:old) ) , Wait(200) Window.Go(app>"$appfile") );
 
 <exe_apps> := (
           crome=chrome.exe
@@ -34,7 +35,7 @@ minWindow() := Wait(100) {alt+space} Wait(100) n Wait(100);
 
 # switch to window, prefix with focusing messages from that link window means we avoid situation where Windows
 # not brought into focus (something to do with stale/unchanged window objects?)
-go to <exe_apps> = focusNatlink() Window.Go(app>$1);
+go to <exe_apps> = focusNatlink() retryGo($1);
 #app go <exe_apps> = launchBar() Wait(0) {enter} Wait(0) Window.Go(app>$1);
 #app go <exe_apps> = Window.Go_(app>$1) If(Window.Success(), "", launchBar() Wait(0) {enter} Wait(0) Window.Go(app>$1));
 

@@ -50,7 +50,6 @@ Back <1to30> Words                        =  {Esc}"$1b";
     Move to=":" Wait(200) ".m" | Copy to=":" Wait(200) ".co" | Change="cc" | Kill="dd" | Copy="yy" | 
     Sub=":" Wait(200) ".s///{Left_2}" | Duplicate="yyp" | Start="\^i" | Append="i{end}" | 
     beginning="20li" | middle="40li" | near the end="60li" |
-    vim comment=":" Wait(200) ".s/^/#/{enter}" | vim remove comment=":" Wait(200) ".s/#//{enter}" |
     New Here="i{enter}" | New insert="o" | New Back="O" | Append semicolon="\$i;" 
 );
 <edit_mode>             := (Change={c} | Kill={d} | Copy={y}); # Indent= | Comment=
@@ -73,7 +72,7 @@ Join [(Back=Up | Next=Space)] [Line]                             =  {esc} When($
 <relative_range_actions> := (
     Change="cc" | Kill="dd" | Copy="yy" | 
     Move to="m" | Copy to="co" | # same as copy to in this context | copy here="co-1{enter}" |
-    duplicate="yyp" | indent=">>g;" | reverse indent="<<g;"
+    duplicate="yyp"
 );
 <relative_range_actions> (Next="+" | Back="-") Line                          =  {Esc} Wait(200) "$2" Wait(200) "$1";
 <relative_range_actions> 2..30 Lines                                   =  {Esc} Wait(200) "$2$1"; #".,+" Eval($2-1) "$1";
@@ -81,7 +80,9 @@ Join [(Back=Up | Next=Space)] [Line]                             =  {esc} When($
 <relative_range_commands> := (
     Sub="s///gc{Left_4}" | # Comment="TComment" |
     Start="{enter}i" | Append="{enter}i{end}" | 
-    copy here="co." | comment="s/^/#/{enter}" | remove comment="s/#//{enter}"
+    copy here="co." | comment="s/^/\/\//{enter}" | remove comment="s/\/\///{enter}" |
+    pie comment="s/^/#/{enter}" | remove pie comment="s/#//{enter}" |
+    indent=">{enter}" | reverse indent="<{enter}"
 );
 <relative_range_commands> (Next="+" | Back="-") Line                          =  {Esc} Wait(200) "$2" Wait(200) ":$1";
 <relative_range_commands> 2..30 Lines                                   =  {Esc} Wait(200) ":.,+" Eval($2-1) "$1";
@@ -90,7 +91,8 @@ Join [(Back=Up | Next=Space)] [Line]                             =  {esc} When($
 # multiple line action with range specified
 <range_actions> := (
     Move to="m" | Copy to="co" | Change="c" | Kill="d" | Copy="y" | 
-    Sub="s///" | copy here="co." | comment="s/^/#/"| remove comment="s/#//"
+    Sub="s///" | copy here="co." | comment="s/^/\/\//"| remove comment="s/\/\///" |
+    copy here="co." | pie comment="s/^/#/"| remove pie comment="s/#//"
 );
 <range_actions> Range = {esc}":" Wait(200) "$1" Wait(200) {Home};
 
@@ -100,7 +102,7 @@ Flow (Start="gg" | Append="G") [<insert>]                      =  {Esc}"$1" Wait
 <edit_mode> (Flow Here=".,\$" | Flow All="0,\$" | Back Flow Here="0,.")   =  {Esc}":" Wait(200) "$2$1"{Enter};
 
 # other grammar macro specifications for text editing commands
-(Indent=">" | reverse indent="<") (Line={enter} | Range={Left}) [1..9] = When($3, Repeat($3, {Esc}":" Wait(200) "$1"$2), {esc}":" Wait(200) "$1"$2);
+#(Indent=">" | reverse indent="<") (Line={enter} | Range={Left}) [1..9] = When($3, Repeat($3, {Esc}":" Wait(200) "$1"$2), {esc}":" Wait(200) "$1"$2);
 
 <sub_action> := (all="%s" | here=".,\$s" | back here="0,.s");
 (sub | substitute) <sub_action>       =  {Esc}":" Wait(200) "$2///gc"Repeat(4, {Left});
