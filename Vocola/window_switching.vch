@@ -16,7 +16,8 @@ launch bar = launchBar();
 # handle is not recognised, it is nonetheless a hack!
 focusNatlink() := launchBar() {enter} {alt+space} Wait(50) n;
 minWindow() := Wait(200) {alt+space} Wait(200) n Wait(200);
-retryGo(appfile) := Variable.Set(:old, Window.ID()) Window.Go(app>"$appfile") Wait(200) If( Eval( Variable.Get() == Variable.Get(:old) ) , Wait(200) Window.Go(app>"$appfile") );
+retryGo(appfile) := Repeat(3, Window.Go(app>"$appfile") Wait(200));
+#Wait(200) If( Eval( Window.ID() = Variable.Get(:old) ) , Wait(200) Window.Go(app>"$appfile") );
 
 <exe_apps> := (
           crome=chrome.exe

@@ -73,10 +73,12 @@ $set MaximumCommands 4;  # allow up to four of these commands per utterance
 (paste that | yank)           = {ctrl+v};
 
 
-<kill_word> := ( kill = ctrl+shift+left | pull-word = ctrl+shift+right );
+kill 1..20 = Repeat($1, {del});
+kill 1..20 words = Repeat($1, {ctrl+shift+right}) {del};
+#<kill_word> := ( kill = ctrl+shift+left | pull-word = ctrl+shift+right );
 
-<kill_word>        = {$1   }{ctrl+x};
-<kill_word> 1..100 = {$1_$2}{ctrl+x};
+#<kill_word>        = {$1   }{ctrl+x};
+#<kill_word> 1..100 = {$1_$2}{ctrl+x};
 
 
 <direction> := ( start = {shift+home} | rest = {shift+end}{shift+left} );
@@ -224,33 +226,6 @@ word wrap mode                 = {ctrl+w};
      | ">" | close bend = ">"
      |  ?  | question   =  ?
      |  @
-
-     | big Alpha    = A
-     | big Bravo    = B
-     | big Charlie  = C
-     | big Delta    = D
-     | big echo     = E
-     | big foxtrot  = F
-     | big golf     = G
-     | big Hotel    = H
-     | big India    = I
-     | big Juliett  = J
-     | big kilo     = K
-     | big Lima     = L
-     | big Mike     = M
-     | big November = N
-     | big Oscar    = O
-     | big Papa     = P
-     | big Quebec   = Q
-     | big Romeo    = R
-     | big Sierra   = S
-     | big tango    = T
-     | big uniform  = U
-     | big Victor   = V
-     | big whiskey  = W
-     | big x-ray    = X
-     | big Yankee   = Y
-     | big Zulu     = Z
 
      | "[" | bracket       = "["
      |       backslash     = "\"
