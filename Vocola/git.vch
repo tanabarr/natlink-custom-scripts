@@ -3,7 +3,7 @@
 ##
 
 <subcmds> := (log|fetch|pull|clone|config|help|
-              checkout="checkout "|checkout move="checkout -B "|checkout new="checkout -b "|
+              checkout="checkout "|checkout existing="checkout -B "|checkout new="checkout -b "|
               checkout reset="checkout -- "|
               branch="branch "|branch remove="branch -D "|branch show="branch{enter}"|
               status|status show="status -uno{enter}"|
