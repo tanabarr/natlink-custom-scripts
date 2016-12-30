@@ -1,6 +1,7 @@
 # Voice commands for gvim
 
 #include Unimacro.vch;
+#include keys.vch;
 include vim.vch;
 
 backspace = {backspace};
