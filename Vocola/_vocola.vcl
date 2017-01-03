@@ -7,7 +7,7 @@ include window_switching.vch;
 
 ### window and tab navigation
 
-#Close Here                           = ButtonClick(2,1) Wait(100) c; 
+#Close Here                           = ButtonClick(2,1) Wait(100) c;
 Close Prompt                         = {Alt+Space}c;
 Context Menu                         = {shift+f10}; #{Alt+f}{Down};
 # implemented elsewhere
@@ -39,9 +39,9 @@ okay alert = {tab}{enter};
 # environment variable extension
 type environment variable (home=HOME|path=PATH|unknown) = Env.Get($1,"UNKNOWN");
 # insert date extension
-Short date separator = "----{enter}" Date.Now("%d/%m/%y") "{enter}{enter}{enter}{up}"; 
+Short date separator = "----{enter}" Date.Now("%d/%m/%y") "{enter}{enter}{enter}{up}";
 # Windows clipboard extension
-show clipboard = MsgBoxConfirm('"' Clipboard.Get() '"', 64, 
+show clipboard = MsgBoxConfirm('"' Clipboard.Get() '"', 64,
                                "Current contents of clipboard");
 set clipboard to <_anything> = Clipboard.Set($1);
 # persistent variable extension
@@ -100,7 +100,7 @@ Mouse <leftRight> <mouse_range_adjust> = moveBy($1 Eval($2/5), 0);
 <ns> := 0..10;
 Window move <direction> = SendSystemKeys({Win+$1});
 Window move <direction> <ns> = Repeat($2, SendSystemKeys({Win+$1}));
-Window maximise (swap | left | right) = SendSystemKeys({Win+Up}) 
+Window maximise (swap | left | right) = SendSystemKeys({Win+Up})
     Repeat(2, SendSystemKeys({Win+Right})) SendSystemKeys({Win+Up});
 #<edge> := (Top=n | Bottom=s | Left=w | Right=e);
 #
@@ -290,6 +290,7 @@ Keyac (space|
 	escape="esc"|
 	pie="py"|
     red package="rpm"|
+    standard="std"|
 	config="cfg") = "$1";
 
 <key_short> := (
