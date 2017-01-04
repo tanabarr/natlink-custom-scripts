@@ -291,6 +291,7 @@ Keyac (space|
 	pie="py"|
     red package="rpm"|
     standard="std"|
+    string="str"|
 	config="cfg") = "$1";
 
 <key_short> := (
