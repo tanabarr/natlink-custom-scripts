@@ -14,4 +14,4 @@ show the time = T;
 GOTO time = {Ctrl+T};
 (play | pause) =  " ";
 volume (Up | Down) = {Ctrl+$1};
-subtitles off = {alt+t} {down} {right} {enter};
+subtitles off = {esc} {alt+t} {down} {right} {enter} {Alt+v}f;
