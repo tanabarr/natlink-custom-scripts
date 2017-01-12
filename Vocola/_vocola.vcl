@@ -265,6 +265,23 @@ networkPanel() := SendSystemKeys({Win+r}) "ncpa.cpl"{enter} {ctrl+down};
 Network panel          = networkPanel();
 #Network panel =
 #    controlPanel() Wait(2000) {n} {enter}; # WaitForWindow("Sound","",7000);
+
+commandPrompt() := SendSystemKeys({Win+r}) "cmd.exe"{enter}; # {ctrl+down};
+                    #WaitForWindow("Network Connections","",2000) {ctrl+down};
+
+command panel  = commandPrompt();
+
+# bring up VM, putty terminals and mount NFS share. this doesn't require manual
+# authentication as with accessing using "file ..." unimacro grammar
+load chroma machine  = commandPrompt() Wait(200)
+    "c:\win^ scripts\_first_VM.bat"{enter} Wait(3000)
+    "exit"{enter};
+
+# bring down all VMs and unmount NFS shares
+close virtual machines = commandPrompt() Wait(200)
+    "c:\win^ scripts\_stop_headless.bat"{enter} Wait(3000)
+    "exit"{enter};
+
 # ---------------------------------------------------------------------------
 # global text shortcuts
 
