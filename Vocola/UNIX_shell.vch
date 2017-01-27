@@ -16,6 +16,7 @@ include "service_control.vch";
     find process="ps ax"|
     find process file="ps ef"|
     find files="find / -name ''{left}"|
+    removed by code="find ./ -name '*.pyc'| xargs rm"|
     make archive="tar -cf "|
     extract archive="tar -xf "|
     track archive="tar -xf "|
