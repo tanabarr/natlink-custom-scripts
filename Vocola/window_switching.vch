@@ -64,9 +64,9 @@ spotify search <_anything> = focusNatlink() Window.Go(app>Spotify.exe)
 
 # bounce to chrome browser
 
-chrome page (down=dn|up) = Variable.Set(:old, Window.ID()) focusNatlink() 
-    Window.Go(app>chrome.exe) Wait(200) {pg$1} focusNatlink()
-    Window.Go(ID> Variable.Get(:old));
+chrome page (down=dn|up) [2..9] = Variable.Set(:old, Window.ID()) focusNatlink() 
+    Window.Go(app>chrome.exe) When($2, Repeat($2, Wait(200) {pg$1}), Wait(200) {pg$1}) 
+    focusNatlink() Window.Go(ID> Variable.Get(:old));
 
 # open firefox browser
 
