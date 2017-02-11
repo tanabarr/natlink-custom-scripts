@@ -181,6 +181,12 @@ postgres sequel = postgresql;
 engine X = nginx;
 
 ##
+## database query macros
+##
+select query = "select * from chroma_core_";
+update query = "update chroma_core_";
+
+##
 ## Macros for tcpdump
 ##
 packet [to] dump = "tcpdump ";
