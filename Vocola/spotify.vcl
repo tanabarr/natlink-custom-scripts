@@ -14,4 +14,5 @@ Search for <_anything>	= {Ctrl+l} $1 {Enter};
 volume (Up | Down | Mute=shift+Down) = {Ctrl+$1};
 large artwork toggle = {alt+v}l;
 close window = {alt+f4};
-
+search = {ctrl+"l"};
+connect device = {ctrl+"d"};
