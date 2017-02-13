@@ -355,4 +355,6 @@ cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
 windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
 [(upper)] she said = When($1, "ZFS", "zfs");
+[(upper)] she pool = When($1, "ZfsPool", "zpool");
+[(upper)] she data = When($1, "ZfsDataset", "dataset");
 dongle number = "0607659202";
