@@ -48,7 +48,7 @@ go to <exe_apps> = focusNatlink() retryGo($1);
 #    HeardWord(mouse, window, seven, seven, three, nine, click)
 #    minWindow() Window.Go(ID> Variable.Get(:old));
 
-spotify window (space={space} | 
+spotify window (space="" | 
                 skip={ctrl+right} | 
                 volume up={ctrl+up} | 
                 volume down={ctrl+down} | 
