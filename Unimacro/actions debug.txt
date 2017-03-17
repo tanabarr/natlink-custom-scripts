@@ -1,2 +1,0 @@
-------new action: <<cut>>, 
-<<cut>> from [default]: {ctrl+x}
