@@ -230,22 +230,31 @@ brightnessControl() := SendSystemKeys({win+i}) {Down_4} Wait(200) {Right_2} {ent
 brightness control = brightnessControl();
 brightness (up|down) (10|20|30|40|50) = brightnessControl() Wait(100) {$1_$2} Repeat(2, Wait(100) {esc});
 
-#<sound_device> := (headset=0 | laptop=1);
-#<up_down> := (Up="Right" | Down="Left");
-#<adjust_amount> := (tiny=2 | small=5 | medium=10 | large=20 | massive=40);
-
 soundPanel() := SendSystemKeys({Win+r}) WaitForWindow("Run","",1000) "mmsys.cpl"{enter} WaitForWindow("Sound","",1000) {ctrl+down};
 Sound panel          = soundPanel();
 
+# index from bottom
+<sound_device> := (headset=0 | laptop=1 | soundtouch=2 | Andrea=3);
+#<up_down> := (Up="Right" | Down="Left");
+#<adjust_amount> := (tiny=2 | small=5 | medium=10 | large=20 | massive=40);
+
 ## bring up volume control of the specified device
 #levelAdjust(deviceindex) := soundPanel() {Down_$deviceindex} {Alt+p} {Ctrl+Tab};
-#
-#Sound to <sound_device> = soundPanel() {Down_$1} {Alt+s} {enter};
+
+Sound to <sound_device> = soundPanel() {Down_10} Repeat($1, Wait(100) {up})
+    Wait(100) {Alt+s} {enter};
 #volume <up_down> <adjust_amount> <sound_device> = levelAdjust($3) {$1_$2}
 #                                                  Repeat(2, {enter});
 #volume (mute | unmute) <sound_device> = levelAdjust($2) {Tab} {Space}
 #                                        Repeat(2, {enter});
 
+# specific action for soundtouch, connect and set as default
+Sound connect [to] soundtouch = soundPanel() {Down_10} Wait(200) {up_2} Wait(100) 
+    {shift+f10} Wait(100) {down_2} Wait(100) {enter} Wait(2000) {alt+s} Wait(100)
+    {esc};
+
+Sound disconnect [from] soundtouch = soundPanel() {Down_10} Wait(100) {up_2} 
+    Wait(100) {shift+f10} Wait(100) {down_4} Wait(100) {enter} {esc};
 
 displayPanel() := SendSystemKeys({Win+r})  "desk.cpl"{enter} WaitForWindow(
 "Control Panel\All Control Panel Items\Display\Screen Resolution","",2000);
@@ -264,12 +273,14 @@ networkPanel() := SendSystemKeys({Win+r}) "ncpa.cpl"{enter} {ctrl+down};
 Network panel          = networkPanel();
 
 commandPrompt() := SendSystemKeys({Win+r}) "cmd.exe"{enter};
+#command panel  = commandPrompt();
 
-winScriptsExecute(file_name) := commandPrompt() Wait(200)
-    "c:\win^ scripts\" "$file_name"{enter} Wait(3000)
-    "exit"{enter};
+adminCommandPrompt() := SendSystemKeys({Win+s}) "cmd.exe" Wait(400)
+    {shift+f10} Wait(400) {up_2} Wait(400) {enter};.wmanainy
+command panel = adminCommandPrompt();
 
-command panel  = commandPrompt();
+winScriptsExecute(file_name) := adminCommandPrompt() Wait(2000)
+    "c:\win^ scripts\" "$file_name"{enter} Wait(1000) "exit"{enter};
 
 # bring up VM, putty terminals and mount NFS share. this doesn't require manual
 # authentication as with accessing using "file ..." unimacro grammar
@@ -278,7 +289,8 @@ load chroma machine  = winScriptsExecute("_first_VM.bat");
 # bring down all VMs and unmount NFS shares
 close virtual machines = winScriptsExecute("_stop_headless.bat");
 
-disable local area connection = winScriptsExecute("_stop_local_area_connection.bat");
+disable local area connection = winScriptsExecute("_disable_local_area_connection.bat");
+enable local area connection = winScriptsExecute("_enable_local_area_connection.bat");
 # ---------------------------------------------------------------------------
 # global text shortcuts
 
