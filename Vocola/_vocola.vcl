@@ -261,27 +261,24 @@ display (settings|panel)          = displayPanel();
 #Device control      = deviceControl();
 #eject mass storage = massStorageEject();
 networkPanel() := SendSystemKeys({Win+r}) "ncpa.cpl"{enter} {ctrl+down};
-                    #WaitForWindow("Network Connections","",2000) {ctrl+down};
 Network panel          = networkPanel();
-#Network panel =
-#    controlPanel() Wait(2000) {n} {enter}; # WaitForWindow("Sound","",7000);
 
-commandPrompt() := SendSystemKeys({Win+r}) "cmd.exe"{enter}; # {ctrl+down};
-                    #WaitForWindow("Network Connections","",2000) {ctrl+down};
+commandPrompt() := SendSystemKeys({Win+r}) "cmd.exe"{enter};
+
+winScriptsExecute(file_name) := commandPrompt() Wait(200)
+    "c:\win^ scripts\" "$file_name"{enter} Wait(3000)
+    "exit"{enter};
 
 command panel  = commandPrompt();
 
 # bring up VM, putty terminals and mount NFS share. this doesn't require manual
 # authentication as with accessing using "file ..." unimacro grammar
-load chroma machine  = commandPrompt() Wait(200)
-    "c:\win^ scripts\_first_VM.bat"{enter} Wait(3000)
-    "exit"{enter};
+load chroma machine  = winScriptsExecute("_first_VM.bat");
 
 # bring down all VMs and unmount NFS shares
-close virtual machines = commandPrompt() Wait(200)
-    "c:\win^ scripts\_stop_headless.bat"{enter} Wait(3000)
-    "exit"{enter};
+close virtual machines = winScriptsExecute("_stop_headless.bat");
 
+disable local area connection = winScriptsExecute("_stop_local_area_connection.bat");
 # ---------------------------------------------------------------------------
 # global text shortcuts
 
