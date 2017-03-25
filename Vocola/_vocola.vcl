@@ -273,24 +273,29 @@ networkPanel() := SendSystemKeys({Win+r}) "ncpa.cpl"{enter} {ctrl+down};
 Network panel          = networkPanel();
 
 commandPrompt() := SendSystemKeys({Win+r}) "cmd.exe"{enter};
-#command panel  = commandPrompt();
+command panel  = commandPrompt();
 
 adminCommandPrompt() := SendSystemKeys({Win+s}) "cmd.exe" Wait(400)
-    {shift+f10} Wait(400) {up_2} Wait(400) {enter};.wmanainy
-command panel = adminCommandPrompt();
+    {shift+f10} Wait(400) {up_2} Wait(400) {enter};
+# so commands don't seem to get loaded or some other problem that means
+# we can't dictate into window
+# command panel = adminCommandPrompt();
 
-winScriptsExecute(file_name) := adminCommandPrompt() Wait(2000)
+adminScriptsExecute(file_name) := adminCommandPrompt() Wait(2000)
+    "c:\win^ scripts\" "$file_name"{enter} Wait(1000) "exit"{enter};
+
+scriptsExecute(file_name) := commandPrompt() Wait(2000)
     "c:\win^ scripts\" "$file_name"{enter} Wait(1000) "exit"{enter};
 
 # bring up VM, putty terminals and mount NFS share. this doesn't require manual
 # authentication as with accessing using "file ..." unimacro grammar
-load chroma machine  = winScriptsExecute("_first_VM.bat");
+load chroma machine  = scriptsExecute("_first_VM.bat");
 
 # bring down all VMs and unmount NFS shares
-close virtual machines = winScriptsExecute("_stop_headless.bat");
+close virtual machines = scriptsExecute("_stop_headless.bat");
 
-disable local area connection = winScriptsExecute("_disable_local_area_connection.bat");
-enable local area connection = winScriptsExecute("_enable_local_area_connection.bat");
+disable local area connection = adminScriptsExecute("_disable_local_area_connection.bat");
+enable local area connection = adminScriptsExecute("_enable_local_area_connection.bat");
 # ---------------------------------------------------------------------------
 # global text shortcuts
 
