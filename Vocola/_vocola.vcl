@@ -319,7 +319,7 @@ Keyac (space|
 	del|
 	source="src"|
 	escape="esc"|
-"|
+	pie="py"|
     red package="rpm"|
     standard="std"|
     string="str"|
@@ -327,7 +327,7 @@ Keyac (space|
 
 <key_short> := (
   pie="python"|
-  I|="ipython"|
+  interactive pie="ipython"|
   upper pie="PYTHON"|
   Hydra="HYD-"|
   Corrie="corosync"|
