@@ -281,10 +281,10 @@ adminCommandPrompt() := SendSystemKeys({Win+s}) "cmd.exe" Wait(400)
 # we can't dictate into window
 # command panel = adminCommandPrompt();
 
-adminScriptsExecute(file_name) := adminCommandPrompt() Wait(2000)
+adminScriptsExecute(file_name) := adminCommandPrompt() Wait(1000)
     "c:\win^ scripts\" "$file_name"{enter} Wait(1000) "exit"{enter};
 
-scriptsExecute(file_name) := commandPrompt() Wait(2000)
+scriptsExecute(file_name) := commandPrompt() Wait(1000)
     "c:\win^ scripts\" "$file_name"{enter} Wait(1000) "exit"{enter};
 
 # bring up VM, putty terminals and mount NFS share. this doesn't require manual
@@ -319,7 +319,7 @@ Keyac (space|
 	del|
 	source="src"|
 	escape="esc"|
-	pie="py"|
+"|
     red package="rpm"|
     standard="std"|
     string="str"|
@@ -327,6 +327,7 @@ Keyac (space|
 
 <key_short> := (
   pie="python"|
+  I|="ipython"|
   upper pie="PYTHON"|
   Hydra="HYD-"|
   Corrie="corosync"|
