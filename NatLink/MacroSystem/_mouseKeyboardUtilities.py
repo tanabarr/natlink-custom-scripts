@@ -69,14 +69,15 @@ class ThisGrammar(GrammarBase):
     #initialisation
     #fs.writedb(schema,db_filename='tmp.db')
 
+    #    <quickStart> exported = QuickStart (left|right|double) row ({3}) column ({3});
+    #    <repeatKey> exported = repeat key ({2}) ({4}|{5});
+    #    <showNatLinkWindow> exported = show natlink;
+    #    <switchToNthWindow> exported = switch to (second|third) <dgndictation>; 
+
     gramSpec = """
         <dgndictation> imported;
-        <quickStart> exported = QuickStart (left|right|double) row ({3}) column ({3});
         <bumpMouse> exported = ({0}) ({0}) bump mouse [({4})];
-        <repeatKey> exported = repeat key ({2}) ({4}|{5});
         <abrvPhrase> exported = ({1}) [mode];
-        <showNatLinkWindow> exported = show natlink;
-        <switchToNthWindow> exported = switch to (second|third) <dgndictation>; 
     """.format( 
                 str(range(10)).strip('[]').replace(', ','|'),
                 '|'.join(abrvMap.keys()),
