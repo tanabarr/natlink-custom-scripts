@@ -98,7 +98,7 @@ Show error description = {Ctrl+F1};
 #(expand="="|collapse="-") line = {ctrl+shift+$1} Wait(100) "a"; #}>(all="shift+"|line) = {ctrl+$2$1};
 expand to level 1..4 = {ctrl+shift+*} $1;
 comment [this] line = Wait(200) {ctrl+"/"};
-(indent=">>"|auto={ctrl+alt+i}|comment={ctrl+"/"}) [the] next 1..20 lines = Repeat($2, Wait(200) $1);
+(indent=">>{enter}"|auto={ctrl+alt+i}|comment={ctrl+"/"}) [the] next 1..20 lines = Repeat($2, Wait(200) $1);
 
 surround with = {ctrl+alt+t};
 (replace normal="ctrl+alt+shift+r"|find in path="ctrl+shift+F"|replace in path="ctrl+shift+R"|structure find=|structure replace=) = {$1};
