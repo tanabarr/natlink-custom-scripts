@@ -206,6 +206,7 @@ remote login cluster [1..9 [1..9]] machine [2..9] = "ssh root@lotus-$1" When($3,
 remote login cluster [1..9 [1..9]] machine one [2..9] = "ssh root@lotus-$1" When($3, $2) "vm1" When($3, $3, $2) {enter}; 
 #When($3, If( Eval('$3 != 1'), $2 ) ) );
 remote login local cluster [2..9] = "ssh root@lotus-32vm$1" {enter};
+remote login = "ssh ";
 
 
 #S F T P <machine> = "sftp $1{enter}";
