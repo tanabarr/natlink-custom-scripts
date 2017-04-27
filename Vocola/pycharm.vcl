@@ -12,7 +12,7 @@ menu (show=hold|select=release) [0..9] = $2 Wait(200) Keys.SendInput({ctrl_$1}{t
 ### frequently used ###
 (increase="="|decrease="-") font size = {ctrl+"="} Wait(50) {shift+$1};
 stretch window (up|down|left|right) 1..9 = Repeat($2, Wait(100) {ctrl+shift+$1});
-update [(from|to)] (version control="#"|default="p") = {ctrl+alt+shift+$2};
+update [(from|to)] (version control="#"|default="p"|destination="x") = {ctrl+alt+shift+$2};
 #compare [file] with = {ctrl+alt+shift+f2};
 commit [to] version control = {ctrl+alt+k};
 (next=Right|previous=Left) 1..9 = Repeat($2, {Alt+$1} Wait(200)) {esc};
