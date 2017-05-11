@@ -290,6 +290,7 @@ scriptsExecute(file_name) := commandPrompt() Wait(1000)
 # bring up VM, putty terminals and mount NFS share. this doesn't require manual
 # authentication as with accessing using "file ..." unimacro grammar
 load chroma machine  = scriptsExecute("_first_VM.bat");
+load second chroma machine  = scriptsExecute("_second_VM.bat");
 
 # bring down all VMs and unmount NFS shares
 close virtual machines = scriptsExecute("_stop_headless.bat");
