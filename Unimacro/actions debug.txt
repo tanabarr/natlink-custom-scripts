@@ -1,0 +1,12 @@
+------new action: <<cut>>, 
+<<cut>> from [default]: {ctrl+x}
+------new action: <<cut>>, 
+<<cut>> from [default]: {ctrl+x}
+------new action: <<startsearch>>, 
+<<startsearch>> from [default]: {ctrl+f}
+------new action: <<searchgo>>, 
+<<searchgo>> from [default]: {enter}
+------new action: <<cut>>, 
+<<cut>> from [default]: {ctrl+x}
+------new action: <<cut>>, 
+<<cut>> from [default]: {ctrl+x}
