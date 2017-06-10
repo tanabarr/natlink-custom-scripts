@@ -23,6 +23,7 @@
               reset|reset soft="reset --soft"|
               reset hard="reset --hard "|reset head="reset HEAD"|
               reset hard head="reset --hard HEAD"|
+              remote show="remote -v"|
               stash|stash list|stash show|stash pop|stash apply|stash save|
               stash show number="stash show -p stash@{}"{left}|
               submodule init|submodule update="submodule update{enter}");
