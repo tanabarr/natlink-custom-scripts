@@ -4,3 +4,4 @@ tmp/*
 NatLink/MacroSystem/*.pyc
 *_vcl.py
 *.swp
+*~
