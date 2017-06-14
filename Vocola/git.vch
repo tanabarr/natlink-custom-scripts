@@ -5,7 +5,8 @@
 <subcmds> := (log|fetch|pull|clone|config|help|
               checkout="checkout "|checkout existing="checkout -B "|checkout new="checkout -b "|
               checkout reset="checkout -- "|
-              branch="branch "|branch remove="branch -D "|branch show="branch{enter}"|
+              branch="branch "|branch remove="branch -D "|
+              branch show="branch{enter}"|branch remote="branch -r{enter}"|
               status|status show="status -uno{enter}"|
               add|add updated="add -u "|add patch="add --patch{enter}"| 
               add interactive="add --interactive{enter}"|
