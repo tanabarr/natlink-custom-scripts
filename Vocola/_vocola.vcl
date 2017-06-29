@@ -357,6 +357,7 @@ Intel pay portal ID = TNabarro@IntelUK;
 Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com:8080";
 get it address = "http://review.whamcloud.com/#/c/";
 jira address = "https://jira.hpdd.intel.com/browse/HYD-";
+get have address = "https://github.com/intel-hpdd/intel-manager-for-lustre";
 # editor custom text
 # this is to enable processes running in supervisor on Guest to connect to
 # remote debugger running on host (pycharm listening on 2100 on host)
