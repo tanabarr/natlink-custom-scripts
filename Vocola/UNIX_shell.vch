@@ -23,7 +23,8 @@ include "service_control.vch";
     track archive="tar -xf "|
     read archive="tar -tf "|
     change ownership="chown -R tanabarr:tanabarr "|
-    change permissions="chmod -R 755 "|
+    change permissions="chmod -R a+x "|
+    make executable="chmod -R a+x "|
     move files="mv "|
     remove file="rm "|
     network stats="netstat -tunlp{enter}"|
