@@ -126,7 +126,7 @@ Repeat macro [1..9 times] = $1{shift+"'"}z;
 
 <text_actions> := (
     Paste=p | Paste Back=P | Insert=i | Append here=a | Append=A | Substitute=s | Replace=R | 
-    diff push=dp | diff pull=do | diff next="\]c" | diff back="\[c" |
+    difference push over=dp | difference pull over=do | difference next="\]c" | difference back="\[c" |
     Format=Q | Normal mode= | visual mode={ctrl+v} 
 );
 <text_actions> = {esc}$1;
