@@ -278,3 +278,10 @@ check return = "echo $?{enter}";
 
 remove target = "http -v PUT https://localhost:8000/api/target/16/ state=removed --verify=no --session=iml";
 list volumes = "http -v GET https://localhost:8000/api/volume/ --verify=no --session=iml";
+
+# fSharpi
+
+Sharp (
+    load="#load \"\";;"{left_3}|
+    double=";;"{enter}
+) = $1;
