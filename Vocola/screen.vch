@@ -27,6 +27,7 @@ screen 0..9 = {Ctrl + a} {$1};
 #screen detach = {Ctrl + T} {d};
 screen attach = "screen  {Enter}  {enter}";
 screen join = "screen -x {enter}";
+screen wipe = "screen -wipe {enter}";
 screen search (backward=? | forward=/)= {ctrl+a}"[$1";
 screen search next (backward=? | forward=/)= "$1"{enter};
 
