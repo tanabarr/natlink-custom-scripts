@@ -5,3 +5,4 @@ include keys.vch;
 
 close tab = {ctrl+f4};
 open interactive = {alt+enter};
+command prompt =  "{ctrl+'}";
