@@ -5,8 +5,9 @@ include keys.vch;
 
 window close = {ctrl+f4};
 open interactive = {alt+enter};
-command prompt =  "{ctrl+'}";
+command prompt =  {ctrl+"'"};
 project view = {ctrl+shift+e};
+command such = {ctrl+shift+p};
 
 # Rich languages editing
 Trigger suggestion = {Ctrl+Space};

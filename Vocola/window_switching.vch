@@ -32,6 +32,7 @@ retryGo(appfile) := Repeat(3, Window.Go(app>"$appfile") Wait(200));
           |skype=Skype.exe
           |firefox=firefox.exe
           |explorer=explorer.exe
+          |code=Code.exe
 );
 
 # switch to window, prefix with focusing messages from that link window means we avoid situation where Windows
@@ -40,7 +41,11 @@ go to <exe_apps> = focusNatlink() retryGo($1);
 #app go <exe_apps> = launchBar() Wait(0) {enter} Wait(0) Window.Go(app>$1);
 #app go <exe_apps> = Window.Go_(app>$1) If(Window.Success(), "", launchBar() Wait(0) {enter} Wait(0) Window.Go(app>$1));
 
-# bounce to spotify, perform various actions and return to caller window
+# bounce to application window, wait for 3 seconds and return to caller window
+peek window <exe_apps> =
+    Variable.Set(:old, Window.ID()) focusNatlink() 
+    Window.Go(app>$1) Wait(3000)
+    focusNatlink() Window.Go(ID> Variable.Get(:old));
 
 #spotify [window] favourite = Variable.Set(:old, Window.ID())
 #    focusNatlink()
@@ -48,6 +53,7 @@ go to <exe_apps> = focusNatlink() retryGo($1);
 #    HeardWord(mouse, window, seven, seven, three, nine, click)
 #    minWindow() Window.Go(ID> Variable.Get(:old));
 
+# bounce to spotify, perform various actions and return to caller window
 spotify window (space="" | 
                 skip={ctrl+right} | 
                 volume up={ctrl+up} | 
@@ -63,24 +69,20 @@ spotify search <_anything> = focusNatlink() Window.Go(app>Spotify.exe)
     {ctrl+l} {ctrl+a} Wait(200) $1;
 
 # bounce to chrome browser
-
 chrome page (down=dn|up) [2..9] = Variable.Set(:old, Window.ID()) focusNatlink() 
     Window.Go(app>chrome.exe) When($2, Repeat($2, Wait(200) {pg$1}), Wait(200) {pg$1}) 
     focusNatlink() Window.Go(ID> Variable.Get(:old));
 
 # open firefox browser
-
 page with Firefox = focusNatlink() 
     Window.Go(app>firefox.exe) Wait(500) {ctrl+t} Wait(200) {ctrl+v} {enter};
 
 # bounce to putty and issue last command
-
 bash last command = Variable.Set(:old, Window.ID()) focusNatlink() 
     Window.Go(app>putty.exe) Wait(200) {up}{enter} focusNatlink()
     Window.Go(ID> Variable.Get(:old));
 
 # sonos app
-
 Sonos volume (up="+"|down"-") [1..9] = Variable.Set(:old, Window.ID())
     Window.Go(app>Sonos.exe) Wait(200) Repeat($2, {ctrl+$1}) minWindow() 
     Window.Go(ID> Variable.Get(:old));
@@ -137,7 +139,7 @@ GoArea(color) := Window.Go(AreaTitle($color));
 set <area> area = SetArea($1);
 reset <area> area = ResetArea($1);
 
-<area> area = focusNatlink() GoArea($1);
+<area> area = focusNatlink() GoArea($1) GoArea($1);
 #<area> area = GoArea($1);
 #<area> area [[<dump>] <op>] = GoArea($1) $3 $2;
 #
