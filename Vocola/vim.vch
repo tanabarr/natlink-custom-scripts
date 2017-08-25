@@ -259,7 +259,7 @@ run this [(now={enter})] =  EscWait() ":" Wait(200) "!./% $1";
 Split vertical                   =   EscWait() ":" Wait(200) "vsp"{Enter}{Shift+h}{PgUp}
                                     {Ctrl+w}"l";
 <window_action> := (left=h | right=l | up=k | down=j | next=w | close=c );
-Vim Window <window_action> =  EscWait() {ctrl+w}"$1";
+Vim Window <window_action> =  EscWait() Repeat(2, {ctrl+w}"$1");
 Vim Window crop            =  EscWait() ":" Wait(200) "only"{Enter};
 Vim Window make fat        =  EscWait() ":" Wait(200) "vertical resize +15"{enter};
 Vim Window make thin       =  EscWait() ":" Wait(200) "vertical resize -15"{enter};

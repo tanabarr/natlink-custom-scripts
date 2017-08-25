@@ -29,3 +29,4 @@ open to the side = {ctrl+enter};
 zoom (in="+"|out="-") = {ctrl+$1};
 switch split (1|2|3) = {ctrl+$1};
 close sidebar = {ctrl+b};
+toggle problems = {ctrl+shift+m};
