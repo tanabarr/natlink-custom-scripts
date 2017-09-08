@@ -123,7 +123,19 @@ system config = "/etc/sysconfig";
 my home [(one=tan|two=tom)] = When($1, "~$1/", "~tan/");
 log root = "/var/log/";
 use a lip [(pie=python)] = "/usr/lib/$1";
-(manager|dependencies|common|bundles|agent|external=externals|simulator=sim) = "chroma-$1/";
+(manager|
+    manager core="manager/chroma_core"|
+    manager tests="manager/tests"|
+    manager framework="manager/tests/framework"|
+	dependencies|
+	common="manager/../../iml-common"|
+	bundles|
+	agent|
+	agent device="agent/chroma_agent/device_plugins"|
+	agent action="agent/chroma_agent/action_plugins"|
+	agent tests="agent/tests"|
+#	external=externals|
+	simulator=sim) = "~/projects/chroma/chroma-$1/";
 
 #programming primitives
 (pie="[5,6,7,8]:" {enter} {tab}|bash="5 6 7 8; do ; done" {left_6}) for loop = "for i in "$1;
