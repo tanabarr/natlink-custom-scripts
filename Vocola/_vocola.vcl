@@ -354,7 +354,7 @@ Intel (proxy=proxy-chain.intel.com|
 	proxy port=1080) = $1;
 Intel pay portal ID = TNabarro@IntelUK;
 
-Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com:8080";
+Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com";
 get it address = "http://review.whamcloud.com/#/c/";
 jira address = "https://jira.hpdd.intel.com/browse/HYD-";
 get have address = "https://github.com/intel-hpdd/intel-manager-for-lustre";
