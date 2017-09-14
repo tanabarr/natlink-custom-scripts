@@ -139,6 +139,8 @@ use a lip [(pie=python)] = "/usr/lib/$1";
 
 #programming primitives
 (pie="[5,6,7,8]:" {enter} {tab}|bash="5 6 7 8; do ; done" {left_6}) for loop = "for i in "$1;
+select chrome data = "select * from chroma_core_";
+chrome plug on next = "chroma-agent device_plugin --plugin linux";
 
 ##
 ## command history
