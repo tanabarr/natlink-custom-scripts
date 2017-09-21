@@ -112,7 +112,7 @@ lotus agent log = "vi /var/log/chroma-agent.log" {enter};
 lotus agent console log = "vi /var/log/chroma-agent-console.log" {enter};
 find nose process = "ps ax |grep nose" {enter};
 (pause="STOP"|resume="CONT") process = "kill -$1 ";
-Lotus search agent logs = "ssh lotus-43vm$i 'cat /var/log/chroma-agent.log| grep \"Exception \"';
+Lotus search agent logs = "ssh lotus-vm 'cat /var/log/chroma-agent.log| grep \"Exception \"'";
 
 Django (shell|
 	database shell=dbshell|
