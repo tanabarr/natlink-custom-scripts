@@ -105,7 +105,14 @@ close shell = "exit{enter}";
 start environment 1..5 = "source \$ENV$1/bin/activate{enter}";
 stop environment = "deactivate{enter}"; 
 export (test|development=dev) settings = "export DJANGO_SETTINGS_MODULE=settings";
-get it fetch = "git fetch ssh://tanabarr@review.whamcloud.com:29418/chroma refs/changes/44/19344/10 && git checkout FETCH_HEAD";
+
+# commands frequently used when on Lotus
+lotus remote = "sshpass -p 'lustre' ssh root@lotus-vm.lotus.hpdd.lab.intel.com" {left_27};
+lotus agent log = "vi /var/log/chroma-agent.log" {enter};
+lotus agent console log = "vi /var/log/chroma-agent-console.log" {enter};
+find nose process = "ps ax |grep nose" {enter};
+(pause="STOP"|resume="CONT") process = "kill -$1 ";
+Lotus search agent logs = "ssh lotus-43vm$i 'cat /var/log/chroma-agent.log| grep \"Exception \"';
 
 Django (shell|
 	database shell=dbshell|
