@@ -73,7 +73,7 @@ Highlight usages in file = {Ctrl+Shift+F7};
 Rename = {Shift+F6};
 
 charm (
-    settings={ctrl+shift+f11}|
+    settings={ctrl+alt+s}|
     run console={ctrl+shift+f2}|
     manage tasks={ctrl+shift+","}|
     list tools={alt+Down}|

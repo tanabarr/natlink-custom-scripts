@@ -341,6 +341,7 @@ double right arrow = ">> ";
 triple quote = '"""';
 python interpreter = "python ";
 root user = "root";
+as root = "sudo ";
 default prefix = "192.168.";
 (BEGIN|END) separator = "----$1----{enter}";
 firefox advanced settings = "about:preferences#advanced";
