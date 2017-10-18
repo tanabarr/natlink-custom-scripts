@@ -7,7 +7,13 @@ window close = {ctrl+f4};
 open interactive = {alt+enter};
 command prompt =  {ctrl+"'"};
 project view = {ctrl+shift+e};
-command such = {ctrl+shift+p};
+search all commands = {ctrl+shift+p};
+search all = {ctrl+p};
+go to file = {ctrl+p};
+next highlighted error = {f8};
+
+replace normal = {ctrl+h};
+find next = {f3};
 
 # Rich languages editing
 Trigger suggestion = {Ctrl+Space};
