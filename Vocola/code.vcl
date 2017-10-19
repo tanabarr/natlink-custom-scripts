@@ -36,3 +36,5 @@ zoom (in="+"|out="-") = {ctrl+$1};
 switch split (1|2|3) = {ctrl+$1};
 close sidebar = {ctrl+b};
 toggle problems = {ctrl+shift+m};
+next 1..9 = Repeat($1, {ctrl+shift+tab} Wait(200));
+previous 1 = {ctrl+tab};
