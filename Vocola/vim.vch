@@ -312,6 +312,7 @@ histogram debug =  EscWait() 'i#ifdef DEBUG{enter}fsp_log_debug(shared_data_p->c
 ifdef (debug="DEBUG" | trace="TRACE")                                 =   EscWait() "ddi#ifdef $1"{enter};
 ifdef end                                                       =  EscWait() "o#endif"{enter};
 
+pipe operator = "|>";
 ##
 ## All printable characters in ASCII order with optional short names:
 ##

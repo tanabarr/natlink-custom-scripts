@@ -14,6 +14,7 @@ next highlighted error = {f8};
 
 replace normal = {ctrl+h};
 find next = {f3};
+comment line = {ctrl+k};
 
 # Rich languages editing
 Trigger suggestion = {Ctrl+Space};
