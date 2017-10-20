@@ -6,16 +6,20 @@ include keys.vch;
 window close = {ctrl+f4};
 open interactive = {alt+shift+enter};
 command prompt =  {ctrl+"'"};
-project view = {ctrl+shift+e};
+project view current file = {ctrl+shift+e};
+project view = {alt+1};
 search all [commands] = {ctrl+shift+p};
 (search files|go to file) = {ctrl+shift+p} {ctrl+p};
 next highlighted error = {f8};
 focus terminal = {ctrl+shift+t};
+focus editor = {ctrl+1};
+edit cancel = {ctrl+u};
+(close=c|focus=f|maximise=m) Panel = {ctrl+j} {ctrl+$1};
+toggle panel = {ctrl+j};
 
-replace normal = {ctrl+h};
+replace normal = {ctrl+r};
 find next = {f3};
-comment line = {ctrl+k};
-
+toggle comment = {ctrl+"/"};
 # Rich languages editing
 Trigger suggestion = {Ctrl+Space};
 Trigger parameter hints = {Ctrl+Shift+Space};
@@ -36,7 +40,7 @@ open to the side = {ctrl+enter};
 zoom (in="+"|out="-") = {ctrl+$1};
 switch split (1|2|3) = {ctrl+$1};
 close sidebar = {ctrl+b};
-toggle problems = {ctrl+shift+m};
+toggle (problems|errors) = {ctrl+shift+m};
 #next 1..9 = Repeat($1, {ctrl+shift+tab} Wait(200));
 #previous 1 = {ctrl+tab};
 
@@ -132,7 +136,7 @@ comment [this] line = Wait(200) {ctrl+"/"};
 (indent=">>{enter}"|auto={ctrl+alt+i}|comment={ctrl+"/"}) [the] next 1..20 lines = Repeat($2, Wait(200) $1);
 
 surround with = {ctrl+alt+t};
-(replace normal="ctrl+alt+shift+r"|find in path="ctrl+shift+F"|replace in path="ctrl+shift+R"|structure find=|structure replace=) = {$1};
+(replace normal="ctrl+r"|find in path="ctrl+shift+F"|replace in path="ctrl+shift+R"|structure find=|structure replace=) = {$1};
 
 Select successively increasing code blocks = {Ctrl+w};
 Decrease current selection to previous state = {Ctrl+Shift+w};
@@ -172,7 +176,7 @@ Move to code block (end="]"|start="[") = {Ctrl+$1};
 Type hierarchy = {Ctrl+h};
 Method hierarchy = {Ctrl+Shift+h};
 Call hierarchy = {Ctrl+Alt+h};
-(Next=f2|previous="shift+f2") highlighted error = {$1};
+#(Next=f2|previous="shift+f2") highlighted error = {$1};
 #Edit source / View source = {F4 / Ctrl+Enter};
 
 ### Refactoring ###
