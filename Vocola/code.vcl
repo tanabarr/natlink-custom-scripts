@@ -13,7 +13,7 @@ search all [commands] = {ctrl+shift+p};
 next highlighted error = {f8};
 focus terminal = {ctrl+shift+t};
 focus editor = {ctrl+1};
-edit cancel = {ctrl+u};
+edit cancel = {ctrl+z};
 (close=c|focus=f|maximise=m) Panel = {ctrl+j} {ctrl+$1};
 toggle panel = {ctrl+j};
 
