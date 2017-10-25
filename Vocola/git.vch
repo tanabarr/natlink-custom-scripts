@@ -11,6 +11,7 @@
               add|add updated="add -u "|add patch="add --patch{enter}"| 
               add interactive="add --interactive{enter}"|
               diff="diff "|diff cashed="diff --cached "|
+              diff stats="diff --stat "|
               rebase="rebase -i "|rebase continue="rebase --continue"|
               rebase master="rebase -i master"|rebase develop="rebase -i develop"|
               rebase abort="rebase --abort"|
