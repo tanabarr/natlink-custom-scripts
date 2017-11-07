@@ -12,11 +12,19 @@ project view = {alt+1};
 search all [commands] = {ctrl+shift+p};
 (search files|go to file) = {ctrl+shift+p} {ctrl+p};
 next highlighted error = {f8};
-focus terminal = {ctrl+shift+t};
+
+## integrated terminals
+new terminal = {ctrl+1} {ctrl+j} {ctrl+n};
+(focus|open) terminal = {alt+f12};
+#(focus|open) terminal = {ctrl+j} {ctrl+f};
+close terminal = {ctrl+1} {ctrl+j} {ctrl+c};
+(maximise={ctrl+j} {ctrl+f}|minimise="") terminal = {ctrl+1} {ctrl+j} {ctrl+m} $1;
 focus editor = {ctrl+1};
-edit cancel = {ctrl+z};
-(close=c|focus=f|maximise=m) Panel = {ctrl+j} {ctrl+$1};
-toggle panel = {ctrl+j};
+(next=Right|previous=Left) terminal = {Alt+$1};
+kill terminal = {ctrl+c} "exit" {enter};
+#edit cancel = {ctrl+z};
+#(close=c|focus=f|maximise=m) Panel = {ctrl+j} {ctrl+$1};
+#toggle panel = {ctrl+j};
 
 replace normal = {ctrl+r};
 find next = {f3};

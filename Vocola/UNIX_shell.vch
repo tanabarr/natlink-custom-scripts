@@ -306,3 +306,8 @@ Sharp (
     load="#load \"\";;"{left_3}|
     double=";;"{enter}
 ) = $1;
+
+## typical shell commands
+node test = "npm t"{enter};
+(node|.net) (build="fable npm-run build"|restore) = "dotnet $2"{enter};
+
