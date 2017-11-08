@@ -308,6 +308,6 @@ Sharp (
 ) = $1;
 
 ## typical shell commands
-node test = "npm t"{enter};
+node (test="t"|install="i") = "npm $1"{enter};
 (node|.net) (build="fable npm-run build"|restore) = "dotnet $2"{enter};
 
