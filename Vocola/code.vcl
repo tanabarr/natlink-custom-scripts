@@ -25,6 +25,7 @@ kill terminal = {ctrl+c} "exit" {enter};
 #edit cancel = {ctrl+z};
 #(close=c|focus=f|maximise=m) Panel = {ctrl+j} {ctrl+$1};
 #toggle panel = {ctrl+j};
+focus problems = {ctrl+j} {ctrl+p};
 
 replace normal = {ctrl+r};
 find next = {f3};
