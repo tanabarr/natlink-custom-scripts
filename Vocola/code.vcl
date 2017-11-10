@@ -6,12 +6,15 @@ include keys.vch;
 
 window close = {ctrl+f4};
 open interactive = {alt+shift+enter};
+send (line="l"|selection="s") interactive = {ctrl+j} $1;
 command prompt =  {ctrl+"'"};
 project view current file = {ctrl+shift+e};
 project view = {alt+1};
 search all [commands] = {ctrl+shift+p};
 (search files|go to file) = {ctrl+shift+p} {ctrl+p};
 next highlighted error = {f8};
+skip to <_anything>                          = {ctrl+f} Wait(200) "$1" Wait(200) {esc} "i";
+#Search go <_anything>                       =   EscWait() "/\c$1"{enter};
 
 ## integrated terminals
 new terminal = {ctrl+1} {ctrl+j} {ctrl+n};

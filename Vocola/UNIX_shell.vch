@@ -312,6 +312,6 @@ node (test="t"|install="i") = "npm $1"{enter};
 (node|.net) (build="fable npm-run build"|restore) = "dotnet $2"{enter};
 fable start = "dotnet fable start";
 ## device scanner project specific
-clean distribution = "node_modules\.bin\del-cli ./dist/**";
-send project file = "node_modules\.bin\sendProjFile";
+clean distribution = "node_modules/.bin/del-cli ./dist/**";
+send project file = "node_modules/.bin/sendProjFile";
 build device can = "npm run buildEventListener & npm run buildDeviceScannerDaemon";
