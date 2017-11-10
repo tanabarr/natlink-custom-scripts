@@ -15,7 +15,8 @@ next highlighted error = {f8};
 
 ## integrated terminals
 new terminal = {ctrl+1} {ctrl+j} {ctrl+n};
-(focus|open) terminal = {alt+f12};
+open terminal = {alt+f12};
+focus terminal = {ctrl+shift+t};
 #(focus|open) terminal = {ctrl+j} {ctrl+f};
 close terminal = {ctrl+1} {ctrl+j} {ctrl+c};
 (maximise={ctrl+j} {ctrl+f}|minimise="") terminal = {ctrl+1} {ctrl+j} {ctrl+m} $1;
