@@ -51,7 +51,8 @@ Back <1to30> Words                        =   EscWait() "$1b";
 ### Lines (modify parts of/whole lines)
 <line_actions> := (
     Move to=":" Wait(200) ".m" | Copy to=":" Wait(200) ".co" | Change="cc" | Kill="dd" | Copy="yy" | 
-    Sub=":" Wait(200) ".s///{Left_2}" | Duplicate="yyp" | Start="\^i" | Append="i{end}" | 
+    Sub=":" Wait(200) "s///{Left_2}" | Duplicate="yyp" | Start="\^i" |
+Append="A" | 
     beginning="20li" | middle="40li" | near the end="60li" |
     New Here="i{enter}" | New insert="o" | New Back="O" | Append semicolon="\$i;" 
 );
@@ -158,8 +159,8 @@ GotoLine4Mod(thousands, hundreds, tens, ones, mod) :=
     New back="zzO" | insert="zzo" | 
     # For the following commands we want to perform actions in place, 
     # IE. returns to original line (mark "v").
-    Change=":" Wait(200) ".c{enter}" "'v" | Kill=":" Wait(200) ".d{enter}" "'v" |
-    Copy=":" Wait(200) ".y{enter}" "'v" | Paste="p" "'v" | Paste Back="P" "'v" | 
+    Change=":" Wait(200) ".c{enter}" "'v" | Kill="dd" "'v" |
+    Copy="yy" "'v" | Paste="p" "'v" | Paste Back="P" "'v" | 
     Move to=":" Wait(200) ".m" | #Copy to=":" Wait(200) ".co" | 
     copy here=":" Wait(200) ".y{enter}" "'v" "p" | 
     indent=":" Wait(200) ">{enter}" "'v"| reverse indent=":" Wait(200) "<{enter}" "'v"| 
