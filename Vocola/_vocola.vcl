@@ -4,6 +4,7 @@
 #  overrid in application-specific command files
 
 include window_switching.vch;
+include locals.vch;
 
 ### window and tab navigation
 
@@ -346,8 +347,6 @@ default prefix = "192.168.";
 (BEGIN|END) separator = "----$1----{enter}";
 firefox advanced settings = "about:preferences#advanced";
 
-# Intel specific text shortcuts
-
 # editor custom text
 # this is to enable processes running in supervisor on Guest to connect to
 # remote debugger running on host (pycharm listening on 2100 on host)
@@ -357,9 +356,6 @@ firefox advanced settings = "about:preferences#advanced";
 # local debug on calling commandline
 import debug = "import ipdb;ipdb.set_trace()";
 
-chrome password = "lustre";
-cluster = "lotus-32vm";
-cluster domain = "lotus.hpdd.lab.intel.com";
 [(upper)] she said = When($1, "ZFS", "zfs");
 [(upper)] she pool = When($1, "ZfsPool", "zpool");
 [(upper)] she data = When($1, "ZfsDataset", "dataset");
