@@ -15,6 +15,7 @@ search all [commands] = {ctrl+shift+p};
 next highlighted error = {f8};
 skip to <_anything>                          = {ctrl+f} Wait(200) "$1" Wait(200) {esc} "i";
 #Search go <_anything>                       =   EscWait() "/\c$1"{enter};
+focus editor 1..9 = {ctrl+$1};
 
 ## integrated terminals
 new terminal = {ctrl+1} {ctrl+j} {ctrl+n};
@@ -147,7 +148,13 @@ Show error description = {Ctrl+F1};
 #(expand="="|collapse="-") line = {ctrl+shift+$1} Wait(100) "a"; #}>(all="shift+"|line) = {ctrl+$2$1};
 expand to level 1..4 = {ctrl+shift+*} $1;
 comment [this] line = Wait(200) {ctrl+"/"};
-(indent=">>{enter}"|auto={ctrl+alt+i}|comment={ctrl+"/"}) [the] next 1..20 lines = Repeat($2, Wait(200) $1);
+
+(indent=">>"|reverse indent="<<") 1..20 lines = "{esc}$2$1";
+(indent=">>"|reverse indent="<<") up 1..20 lines = {Up_$2} Wait(200) "{esc}$2$1";
+#|auto={ctrl+alt+i}|
+comment 1..20 lines = Repeat($1, Wait(100) {ctrl+"/"} {Down});
+comment up 1..20 lines = {Up_$1} Repeat($1, Wait(100) {ctrl+"/"} {Down});
+#comment={ctrl+"/"}) [the] next 1..20 lines = Repeat($2, Wait(200) $1);
 
 surround with = {ctrl+alt+t};
 (replace normal="ctrl+r"|find in path="ctrl+shift+F"|replace in path="ctrl+shift+R"|structure find=|structure replace=) = {$1};
