@@ -348,17 +348,6 @@ firefox advanced settings = "about:preferences#advanced";
 
 # Intel specific text shortcuts
 
-Intel (proxy=proxy-chain.intel.com|
-	proxy Web port=911|
-    host=tanabarr-MOBL1.ger.corp.intel.com|
-    manager=imldev.local|
-	proxy port=1080) = $1;
-Intel pay portal ID = TNabarro@IntelUK;
-
-Jenkins address = "https://jenkins.lotus.hpdd.lab.intel.com";
-get it address = "http://review.whamcloud.com/#/c/";
-jira address = "https://jira.hpdd.intel.com/browse/HYD-";
-get have address = "https://github.com/intel-hpdd/intel-manager-for-lustre";
 # editor custom text
 # this is to enable processes running in supervisor on Guest to connect to
 # remote debugger running on host (pycharm listening on 2100 on host)
@@ -371,8 +360,6 @@ import debug = "import ipdb;ipdb.set_trace()";
 chrome password = "lustre";
 cluster = "lotus-32vm";
 cluster domain = "lotus.hpdd.lab.intel.com";
-windows mount command = "mount -u:tanabarr \\192.168.56.102\home\share g:";
 [(upper)] she said = When($1, "ZFS", "zfs");
 [(upper)] she pool = When($1, "ZfsPool", "zpool");
 [(upper)] she data = When($1, "ZfsDataset", "dataset");
-dongle number = "0607659202";

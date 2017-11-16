@@ -14,7 +14,7 @@ search all [commands] = {ctrl+shift+p};
 (search files|go to file) = {ctrl+shift+p} {ctrl+p};
 next highlighted error = {f8};
 skip to <_anything>                          = {ctrl+f} Wait(200) "$1" Wait(200) {esc} "i";
-#Search go <_anything>                       =   EscWait() "/\c$1"{enter};
+Search project <_anything>                       =   EscWait() {ctrl+shift+f} Wait(200) "$1";
 focus editor 1..9 = {ctrl+$1};
 
 ## integrated terminals
